@@ -306,4 +306,81 @@
  */
 // Необходимо создать новый объект obj2, в котором будут все поля объекта obj, но с обновленными значениями полей как у объекта updateObj. 
 
+// Здравствуйте. Прохожу курс основы JavaScript, задание "7. Теоретическая база JS, ч. 3",
+// Задание #6:
 
+// Создайте функцию createCounter(), которая принимает начальное значение и возвращает три функции:
+
+// inc() — увеличивает значение на 1;
+// dec() — уменьшает значение на 1;
+// get() — возвращает текущее значение.
+
+// Не могу разобраться как решить
+
+// function createCounter(i){
+//   let inc = (i) => i+1
+//   let dec = (i) => i-1
+//   let get = (i) => i
+//   return console.log(inc(i), dec(i), get(i))
+// }
+// createCounter(2)
+// return console.log(inc(i), dec(i), get(i))
+// return inc(i), dec(i), get(i)
+// return inc(), dec(), get()
+
+// function createCounter(value) {
+//   const inc = (value) => {
+//     return value++
+//   }
+//   const dec = (value) => {
+//     return value--
+//   }
+//   const get = (value) => {
+//     return value
+//   }
+//   console.log(get(value))
+//   return inc(value), get(value), dec(value)
+// }
+// const { inc, dec, get } = createCounter(5)
+
+// function createCounter(value) {
+//   return {
+//     inc() {return ++value},
+//     dec() {return --value},
+//     get() {return value},
+//   }
+// }
+// const { inc, get, dec } = createCounter(5)
+// console.log(get()) // 5
+// console.log(inc())
+// console.log(inc())
+// console.log(inc())
+// console.log(dec())
+// console.log(get()) // 7
+
+
+// const json =
+//   '{"name":"Luke Skywalker","height":"172","mass":"77","hair_color":"blond","skin_color":"fair","eye_color":"blue","birth_year":"19BBY","gender":"male"}'
+// const jedi = JSON.parse(json)
+
+// console.log(jedi.name)
+// // Luke Skywalker
+// console.log(jedi.gender)
+// // male
+// console.log(jedi)
+// // 19BBY
+
+// const obj = {}
+// const key = {}
+// obj[key] = 'value for the object key'
+
+// console.log(obj)
+
+// const obj1 = {name : 123};
+// const obj2 = {name : 124};
+// obj1.name = obj2.name
+
+// console.log(obj2 == obj1)
+// console.log(obj1.name)
+
+// console.log(obj2.name == obj1.name)
