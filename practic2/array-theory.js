@@ -384,3 +384,56 @@
 // console.log(obj1.name)
 
 // console.log(obj2.name == obj1.name)
+// let newArray = [ 10 , 20 , 30]
+
+// const cell = newArray[0]
+
+// console.log(cell)
+
+// newArray[0] = 20
+
+// console.log(cell)
+
+// console.log(newArray)
+
+// newArray.push(35, 45)
+
+// console.log(newArray)
+
+// newArray.unshift(55, 40)
+
+// console.log(newArray)
+
+// const array = [...newArray]
+
+// console.log(array)
+
+// const num = 1_000_000;
+
+// console.log(num)
+
+// const keyValueCollection = { key: 'value' }
+// console.log(typeof keyValueCollection === 'object')
+
+// const listCollection = [1, 2, 3]
+// console.log(typeof listCollection === 'object')
+
+// const exists = {}
+// if (typeof(exists) === 'object'){
+//   console.log('da')
+// } else {console.log('no')}
+// setTimeout(function greet() {
+//   console.log('Hello!')
+// }, 5000)
+
+
+
+
+// setTimeout(function greet() {
+//   console.log('Hello!')
+// }, 5000)
+
+// console.log("I'm being called before greet function.")
+
+
+
