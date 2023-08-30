@@ -315,7 +315,250 @@
 
 // past()
 
-Необходимо написать функцию countWords(), которая принимает предложение и подсчитывает количество слов в нем.
+// let a = parseFloat("10#")
+// let b = parseInt("10#")
 
-const sentence = "Hello, how are you?";
-console.log(countWords(sentence)); // 4
+// console.log(+(a + b).toFixed(1))
+
+// console.log( +(a + b).toFixed(1) === 0.3 )
+
+// console.log(a===b)
+
+
+// Создайте скрипт, который запрашивает ввод двух чисел (используйте prompt) и после показывает их сумму.
+
+// Запустить демо
+
+// P.S. Есть «подводный камень» при работе с типами.
+
+//  let a = +(prompt("ferst num", 1))
+//   let b = +(prompt("second", 1))
+//   alert(a+b)
+// Создайте функцию readNumber, которая будет запрашивать ввод числового значения до тех пор, пока посетитель его не введёт.
+
+// Функция должна возвращать числовое значение.
+
+// Также надо разрешить пользователю остановить процесс ввода, отправив пустую строку или нажав «Отмена». В этом случае функция должна вернуть null.
+
+// function readNumber(){
+//   let a 
+//   let b = prompt("print num", "")
+//   if (b === null || b===''){
+//     a = null
+//   } else {
+//     a = +b
+//   }
+//   if((Number.isNaN(a)) ){
+//   readNumber()
+// } else if ( a === null){
+//   return null
+// } else return console.log(  a)
+// }
+// readNumber()
+
+// let a = +(prompt("print num", 1))
+// console.log(+(null))
+
+// let qwe = prompt("print num", 1)
+// console.log(qwe==='')
+ 
+
+
+// let i = 0;
+// while (i < 11) {
+//   i += 0.2;
+//   if (i > 9.8 && i < 10.2) console.log( i );
+// }
+
+
+// Встроенный метод Math.random() возвращает случайное число от 0 (включительно) до 1 (но не включая 1)
+
+// Напишите функцию random(min, max), которая генерирует случайное число с плавающей точкой от min до max (но не включая max).
+
+// Пример работы функции:
+
+// console.log( random(1, 5) ); // 1.2345623452
+// console.log( random(1, 5) ); // 3.7894332423
+// console.log( random(1, 5) ); // 4.3435234525
+
+
+// function random(min, max){
+// let a = Math.random() *10
+
+// let x = min
+// let y = max
+
+// if (a<min){
+//   random(min, max)
+// } else if (a>= (max)){
+//   random(min, max)
+// } else return console.log(a) 
+
+// }
+
+// random(1,5)
+
+// Напишите функцию randomInteger(min, max), которая генерирует случайное целое (integer) число от min до max (включительно).
+
+// Любое число из интервала min..max должно появляться с одинаковой вероятностью.
+
+// Пример работы функции:
+
+
+
+// function randomInteger(min, max){
+//   let a = Math.random() *10
+  
+//   let x = min
+//   let y = max
+  
+//   if (a<min){
+//     randomInteger(min, max)
+//   } else if (a> (max+1)){
+//     randomInteger(min, max)
+//   } else return console.log(Math.floor(a)) 
+  
+//   }
+  
+//   randomInteger(1,3)
+
+
+
+
+// const sentence = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut dolore eius, enim vitae doloremque optio veniam eum magnam voluptatum error eligendi voluptatibus provident accusantium corrupti unde accusamus quo!";
+
+// function countWords(sentence){
+
+//   const a = sentence.split(` `)
+
+//   return console.log(a.length)
+
+
+// }
+
+// console.log(countWords(sentence)); // 4
+
+
+
+
+// const fullName = "John Doe Array Strin";
+
+// function getInitials(fullName){
+// const arrayString = fullName.split(` `)
+
+// let newArray =[]
+
+// for (key of arrayString) {
+//   let a = `${key.at(0)}.`
+//   newArray.push(a)
+// }
+//   return newArray.join(' ')
+// }
+
+// const initials = getInitials(fullName);
+// console.log(initials); // "J. D."
+
+
+// function generateGoogleString(number){
+ 
+// let newArray =[]
+// if(number>=1){
+// for(let i = 0; i<number-2; i++){
+//   newArray.push('O')
+// }
+// let a = newArray.join('')
+
+//   return `goo${a}gle`
+
+
+// } else return 'Google'
+// // 
+// }
+
+// console.log(generateGoogleString(4));
+// // Goooogle
+
+// console.log(generateGoogleString(0));
+// // Google
+
+// console.log(generateGoogleString(-2));
+// // Google
+
+
+// const str = "Hello, Привет!";
+
+// function countVowels(str){
+//  let counter = 0
+ 
+//  for (key of str.split('')){
+//   if (key === "а"){
+//     counter++
+//   } else if (key === "А"){
+//     counter++
+//   } else if ( key === "и"){
+//     counter++
+//   }else if (key === "И"){
+//     counter++
+//   } else if ( key === "е"){
+//     counter++
+//   }else if (key === "Е"){
+//     counter++
+//   } else if ( key === "ё"){
+//     counter++
+//   }else if (key === "Ё"){
+//     counter++
+//   } else if ( key === "о"){
+//     counter++
+//   }else if (key === "О"){
+//     counter++
+//   } else if ( key === "у"){
+//     counter++
+//   }else if (key === "У"){
+//     counter++
+//   } else if ( key === "ы"){
+//     counter++
+//   }else if (key === "Ы"){
+//     counter++
+//   } else if ( key === "э"){
+//     counter++
+//   }else if (key === "Э"){
+//     counter++
+//   } else if ( key === "ю"){
+//     counter++
+//   }else if (key === "Ю"){
+//     counter++
+//   } else if ( key === "Я"){
+//     counter++
+//   }else if (key === "Я"){
+//     counter++
+//   } else if ( key === "a"){
+//     counter++
+//   }else if (key === "A"){
+//     counter++
+//   } else if ( key === "e"){
+//     counter++
+//   }else if (key === "E"){
+//     counter++
+//   } else if ( key === "i"){
+//     counter++
+//   }else if (key === "I"){
+//     counter++
+//   } else if ( key === "o"){
+//     counter++
+//   }else if (key === "O"){
+//     counter++
+//   } else if ( key === "u"){
+//     counter++
+//   }else if (key === "U"){
+//     counter++
+//   } else if ( key === "y"){
+//     counter++
+//   }else if (key === "Y"){
+//     counter++
+//   } else counter = counter
+//  }
+//  return counter
+// }
+
+// console.log(countVowels(str)); // 4
+
