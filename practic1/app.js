@@ -870,3 +870,210 @@
 // console.log( arr ); // [3, 1]
 
 
+
+
+// ... ваш код для сортировки по убыванию
+
+// function arSort(a,b){
+//  a-b
+
+// // }
+// let arr = [5, 2, 1, -10, 8];
+// arr.sort((a, b) => b - a )
+// // arr.reverse()
+
+// console.log( arr ); // 8, 5, 2, 1, -10
+
+// У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+
+// Создайте функцию copySorted(arr), которая будет возвращать такую копию.
+
+
+
+// function copySorted(arr){
+//   newAr = arr.slice()
+//   newAr.sort()
+//  return newAr
+// }
+
+// let arr = ["HTML", "JavaScript", "CSS"];
+
+// let sorted = copySorted(arr);
+
+// console.log( sorted ); // CSS, HTML, JavaScript
+// console.log( arr ); // HTML, JavaScript, CSS (без изменений)
+
+// Создайте функцию конструктор Calculator, которая создаёт «расширяемые» объекты калькулятора.
+
+// function Calculator(){
+
+
+//   this.methods = {
+//     "-": (a, b) => a - b,
+//     "+": (a, b) => a + b
+//   };
+
+//   this.calculate = function(str) {
+
+//     let split = str.split(' '),
+//       a = +split[0],
+//       op = split[1],
+//       b = +split[2]
+
+//     if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+//       return NaN;
+//     }
+
+//     return this.methods[op](a, b);
+//   }
+
+//   this.addMethod = function(name, func) {
+//     this.methods[name] = func;
+//   };
+
+// }
+// let calc = new Calculator;
+// console.log( calc.calculate("3 + 7") ); // 10
+
+
+
+
+
+// Затем добавьте метод addMethod(name, func), который добавляет в калькулятор новые операции. Он принимает оператор name и функцию с двумя аргументами func(a,b), которая описывает его.
+
+// Например, давайте добавим умножение *, деление / и возведение в степень **:
+
+// let powerCalc = new Calculator;
+// powerCalc.addMethod("*", (a, b) => a * b);
+// powerCalc.addMethod("/", (a, b) => a / b);
+// powerCalc.addMethod("**", (a, b) => a ** b);
+
+// let result = powerCalc.calculate("2 ** 3");
+// console.log( result ); // 8
+
+// Для этой задачи не нужны скобки или сложные выражения.
+// Числа и оператор разделены ровно одним пробелом.
+// Не лишним будет добавить обработку ошибок.
+
+
+
+
+// У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
+
+// Напишите код, который создаст ещё один массив объектов с параметрами id и fullName, где fullName – состоит из name и surname.
+
+// let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+// let petya = { name: "Петя", surname: "Иванов", id: 2 };
+// let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+// let users = [ vasya, petya, masha ];
+
+// let usersMapped=[]
+
+
+//  usersMapped = users.map(function addObj(item){
+ 
+//   let a ={}
+//   a.fullName = item.name + ' ' + item.surname
+//  a.id = item.id
+//  return a
+//  })
+
+/*
+usersMapped = [
+  { fullName: "Вася Пупкин", id: 1 },
+  { fullName: "Петя Иванов", id: 2 },
+  { fullName: "Маша Петрова", id: 3 }
+]
+*/
+
+// console.log( usersMapped[0].id ) // 1
+// console.log( usersMapped[0].fullName ) // Вася Пупкин
+
+
+// Напишите функцию sortByAge(users), которая принимает массив объектов со свойством age и сортирует их по нему.
+
+// Например:
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+// let grisha = { name: "Гриша", age: 1 };
+
+// let arr = [ vasya, petya, masha, grisha ];
+
+
+
+// function sortByAge(arr){
+// arr.sort(function(a, b) { return a.age - b.age; })
+// }
+
+
+// sortByAge(arr);
+
+// // теперь: [vasya, masha, petya]
+// console.log(arr[0].name); // Вася
+// console.log(arr[1].name); // Маша
+// console.log(arr[2].name); // Петя
+// console.log(arr[3].name)
+
+
+
+// Напишите функцию shuffle(array), которая перемешивает (переупорядочивает случайным образом) элементы массива.
+
+// Многократные прогоны через shuffle могут привести к разным последовательностям элементов. Например:
+
+// let arr = [1, 2, 3];
+
+// function shuffle(arr){
+
+//   arr.sort(function(a, b) {
+//      return (a + (Math.random()*10)) - (b + (Math.random()*10)) })
+
+// }
+
+
+// shuffle(arr);
+// // arr = [3, 2, 1]
+// console.log(arr)
+// shuffle(arr);
+// // arr = [2, 1, 3]
+
+
+// Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст.
+
+// Формула вычисления среднего арифметического значения: (age1 + age2 + ... + ageN) / N.
+
+// Например:
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 29 };
+
+// let arr = [ vasya, petya, masha ];
+
+// function getAverageAge(arr){
+
+//   let a = 0
+//   for (item of arr){
+//     a = item.age + a
+    
+//   }
+// a = a/arr.length
+// return a
+// }
+
+// console.log( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+
+
+
+
+
+
+
+
+
+
+
+
+
