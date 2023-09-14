@@ -1143,16 +1143,40 @@ usersById = {
 // }, [initial]);
 
 
+// console.log(1)
 
 
 
 
+// let map = new Map()
+
+// const user = {
+//   name: 'ivan',
+//   age: 20,
+// }
+
+// map.set('car', 'tesla')
+// .set(2, 100)
+// .set(user, 10)
+
+// console.log(map)
+// console.log(map.get(user))
+// console.log(map.size)
 
 
 
+// let map = new Map([
+//   [1,20],
+//   ['key','stringValue']
+// ])
 
+// let user = {
+//   name:'ivan',
+//   age: 20
+// }
+// let mut = Object.fromEntries(map)
 
-
+// console.log(mut)
 
 
 
