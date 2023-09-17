@@ -812,8 +812,6 @@
  == 'WebkitTransition';
 */
 
-
-
 // важность: 4
 // Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями больше или равными a и меньше или равными b и возвращает результат в виде массива.
 
@@ -826,12 +824,10 @@
 //   newArray =[]
 
 //   arr.forEach(el => {
-    
+
 //     if (el>=a && el<=b){
 //       newArray.push(el)
-//     } 
-
-  
+//     }
 
 //   });
 // return newArray
@@ -857,20 +853,17 @@
 
 //   for (let i=0; i< arr.length; i++){
 //   if(newArr[i] <= b && newArr[i] >= a ){
-    
+
 //     newNewArr.push(newArr[i])
 //   }
 //   }
 //   arr.splice(0, arr.length, ...newNewArr)
-  
+
 // }
 // let arr = [5, 3, 8, 1];
 // filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
 
 // console.log( arr ); // [3, 1]
-
-
-
 
 // ... ваш код для сортировки по убыванию
 
@@ -888,8 +881,6 @@
 
 // Создайте функцию copySorted(arr), которая будет возвращать такую копию.
 
-
-
 // function copySorted(arr){
 //   newAr = arr.slice()
 //   newAr.sort()
@@ -906,7 +897,6 @@
 // Создайте функцию конструктор Calculator, которая создаёт «расширяемые» объекты калькулятора.
 
 // function Calculator(){
-
 
 //   this.methods = {
 //     "-": (a, b) => a - b,
@@ -935,10 +925,6 @@
 // let calc = new Calculator;
 // console.log( calc.calculate("3 + 7") ); // 10
 
-
-
-
-
 // Затем добавьте метод addMethod(name, func), который добавляет в калькулятор новые операции. Он принимает оператор name и функцию с двумя аргументами func(a,b), которая описывает его.
 
 // Например, давайте добавим умножение *, деление / и возведение в степень **:
@@ -955,9 +941,6 @@
 // Числа и оператор разделены ровно одним пробелом.
 // Не лишним будет добавить обработку ошибок.
 
-
-
-
 // У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
 
 // Напишите код, который создаст ещё один массив объектов с параметрами id и fullName, где fullName – состоит из name и surname.
@@ -970,9 +953,8 @@
 
 // let usersMapped=[]
 
-
 //  usersMapped = users.map(function addObj(item){
- 
+
 //   let a ={}
 //   a.fullName = item.name + ' ' + item.surname
 //  a.id = item.id
@@ -990,7 +972,6 @@ usersMapped = [
 // console.log( usersMapped[0].id ) // 1
 // console.log( usersMapped[0].fullName ) // Вася Пупкин
 
-
 // Напишите функцию sortByAge(users), которая принимает массив объектов со свойством age и сортирует их по нему.
 
 // Например:
@@ -1002,12 +983,9 @@ usersMapped = [
 
 // let arr = [ vasya, petya, masha, grisha ];
 
-
-
 // function sortByAge(arr){
 // arr.sort(function(a, b) { return a.age - b.age; })
 // }
-
 
 // sortByAge(arr);
 
@@ -1016,8 +994,6 @@ usersMapped = [
 // console.log(arr[1].name); // Маша
 // console.log(arr[2].name); // Петя
 // console.log(arr[3].name)
-
-
 
 // Напишите функцию shuffle(array), которая перемешивает (переупорядочивает случайным образом) элементы массива.
 
@@ -1032,13 +1008,11 @@ usersMapped = [
 
 // }
 
-
 // shuffle(arr);
 // // arr = [3, 2, 1]
 // console.log(arr)
 // shuffle(arr);
 // // arr = [2, 1, 3]
-
 
 // Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст.
 
@@ -1064,21 +1038,15 @@ usersMapped = [
 
 // console.log( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 
-
-
 // Пусть arr – массив строк.
 
 // Напишите функцию unique(arr), которая возвращает массив, содержащий только уникальные элементы arr.
 
 // Например:
 
-
-
 // function unique(arr) {
 //   finalArr = []
 //   for (let item of arr){
-
-    
 
 //     if (!(finalArr.includes(item,0))){
 //       finalArr.push(item)
@@ -1092,7 +1060,6 @@ usersMapped = [
 // ];
 
 // console.log( unique(strings) ); // кришна, харе, :-O
-
 
 // Допустим, мы получили массив пользователей в виде {id:..., name:..., age:... }.
 
@@ -1109,8 +1076,6 @@ usersMapped = [
 //   }
 //   return  newOb
 // }
-
-
 
 // let users = [
 //   {id: 'john', name: "John Smith", age: 20},
@@ -1142,11 +1107,7 @@ usersById = {
 //   // ...
 // }, [initial]);
 
-
 // console.log(1)
-
-
-
 
 // let map = new Map()
 
@@ -1163,25 +1124,427 @@ usersById = {
 // console.log(map.get(user))
 // console.log(map.size)
 
-
-
 // let map = new Map([
 //   [1,20],
 //   ['key','stringValue']
 // ])
 
-// let user = {
-//   name:'ivan',
-//   age: 20
+// console.log(map.keys())
+
+// let set = new Set()
+
+// let john = { name: "John" };
+// let pete = { name: "Pete" };
+// let mary = { name: "Mary" };
+
+// set.add(john);
+// set.add(pete);
+// set.add(mary);
+// set.add(john);
+// set.add(mary);
+
+// console.log(set)
+// for (let users of set){
+//   console.log(users.name)
 // }
-// let mut = Object.fromEntries(map)
 
-// console.log(mut)
+// const values = ["Hare", "Krishna", "Hare", "Krishna",
+// "Krishna", "Krishna", "Hare", "Hare", ":-O"]
 
+// function unique(arr) {
 
+//   return Array.from(new Set(arr))
+// }
 
+// unique(values)
 
+// let arr = ["ear", "era", ];
 
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+// function aclean(arr){
+
+// let map = new Map()
+// let set = new Set()
+// for (a of arr){
+//   set.add((a.toLowerCase().split('').sort().join('')))
+// }
+// for(let i of set){
+//   for (let items of arr){
+//   if(
+//     (i.toLowerCase().split('').sort().join('')
+//   ===(items.toLowerCase().split('').sort().join('')))
+//   ){
+//     map.set(`${i}`,`${items}`)
+//   }
+// }
+// }
+// return (Array.from(map.values()))
+
+// }
+
+// aclean(arr)
+
+// "nap,teachers,ear" или "PAN,cheaters,era"
+
+// let set = new Set()
+// for (item of arr){
+//   set.add((item.toLowerCase().split('').sort().join('')))
+// }
+// // Set(3) {'anp', 'aceehrst', 'aer'}
+
+// for (i of set){
+//     for (item of arr){
+//       if((i.toLowerCase().split('').sort().join(''))===(item.toLowerCase().split('').sort().join(''))){
+//         //
+//         //
+//       }
+//     }
+// }
+// console.log(set)
+
+// Есть объект salaries с произвольным количеством свойств, содержащих заработные платы.
+
+// Напишите функцию sumSalaries(salaries), которая возвращает сумму всех зарплат с помощью метода Object.values и цикла for..of.
+
+// Если объект salaries пуст, то результат должен быть 0.
+
+// Например:
+
+// let salaries = {
+//   "John": 100,
+//   "Pete": 300,
+//   "Mary": 250
+// };
+
+// function sumSalaries(salaries){
+// let sum = 0
+// let arr = Object.entries(salaries)
+// for (let item of arr){
+//  sum = sum + item[1]
+//   // item.map(([key, value]) => [key, value * 2])
+
+// }
+//  return (sum)
+// }
+
+// console.log( sumSalaries(salaries) ); // 650
+
+// Напишите функцию count(obj), которая возвращает количество свойств объекта:
+
+// let user = {
+//   name: 'John',
+//   age: 30
+// };
+
+// function count(obj){
+//   return Object.keys(obj).length
+// }
+
+// console.log( count(user) ); // 2
+// Постарайтесь сделать код как можно короче.
+
+// P.S. Игнорируйте символьные свойства, подсчитывайте только «обычные».
+
+// Напишите функцию calculateAge(), которая принимает день рождения и возвращает количество лет.
+
+// const birthDate = new Date('1989-02-20');
+// const age = calculateAge(birthDate);
+
+// function calculateAge(birthDate){
+
+//   const now = new Date()
+//   const birthYear = now.getFullYear() - birthDate.getFullYear()
+//   const birthMon = (now.getMonth() - birthDate.getMonth())+1
+
+//   //new Date(1000*60*60*24*365)
+
+//   let age = `${birthYear}let + ${birthMon}mes`
+
+//  return  age
+// }
+
+// console.log(age);
+
+// let options = {
+//   title: "Menu",
+//   width: 100,
+//   height: 200
+// };
+
+// // { sourceProperty: targetVariable }
+// let {width = 150, height = 200, title} = options;
+
+// // width -> w
+// // height -> h
+// // title -> title
+// console.log(width)
+
+// let user = {
+//   name: "John",
+//   years: 30
+//   };
+
+// let {name, years: age, isAdmin = false} = user
+
+// console.log( name ); // John
+// console.log( age ); // 30
+// console.log( isAdmin ); // false
+
+// У нас есть объект salaries с зарплатами:
+
+// let salaries = {
+//   "John": 100,
+//   "Pete": 300,
+//   "Mary": 250,
+// };
+// // Создайте функцию topSalary(salaries), которая возвращает имя самого высокооплачиваемого сотрудника.
+
+// // Если объект salaries пустой, то нужно вернуть null.
+// // Если несколько высокооплачиваемых сотрудников, можно вернуть любого из них.
+// // P.S. Используйте Object.entries и деструктурирование, чтобы перебрать пары ключ/значение.
+
+// function topSalary(salaries){
+// if(Object.keys(salaries).length === 0){
+//   return null
+// }
+// let map = new Map()
+// for (let [key, value] of Object.entries(salaries)) {
+//    map.set(key,value)
+// }
+
+// let num = 0
+
+// for (let item of map.values()) {
+//   for (let i of map.values()) {
+//     if (item > num){
+//       num = item
+//     }
+//   }
+// }
+// let name = ''
+
+// map.forEach((value, key) => {
+
+//   if (value === num){
+//     name = key
+//   }
+// });
+// return name
+// }
+
+// console.log(topSalary(salaries))
+
+// let born = new Date('1989-02-24')
+
+// let now = new Date()
+// now.setHours(0)
+
+// console.log(now)
+
+// let date = new Date(2012, 0, 3);
+
+// function getWeekDay(date){
+
+//   switch(date.getDay()){
+//     case 1:
+//       return 'ПН'
+//       break;
+//     case 2:
+//       return 'ВТ'
+//       break;
+//     case 3:
+//       return 'СР'
+//       break;
+//     case 4:
+//       return 'ЧТ'
+//       break;
+//     case 5:
+//       return 'ПТ'
+//       break;
+//     case 6:
+//       return 'СБ'
+//       break;
+//     case 0:
+//       return 'ВС'
+//       break ;}}
+
+// console.log(getWeekDay(date))
+
+// let date = new Date(2014, 0, 5)
+
+// function getLocalDay(date){
+//   switch(date.getDay()){
+//     case 1:
+//       return 1
+//       break;
+//     case 2:
+//       return 2
+//       break;
+//     case 3:
+//       return 3
+//       break;
+//     case 4:
+//       return 4
+//       break;
+//     case 5:
+//       return 5
+//       break;
+//     case 6:
+//       return 6
+//       break;
+//     case 0:
+//       return 7
+//       break ;}}
+
+// console.log(getLocalDay(date))
+
+// Создайте функцию getDateAgo(date, days), возвращающую число, которое было days дней назад от даты date.
+
+// К примеру, если сегодня двадцатое число, то getDateAgo(new Date(), 1) вернёт девятнадцатое и getDateAgo(new Date(), 2) – восемнадцатое.
+
+// Функция должна надёжно работать при значении days=365 и больших значениях:
+
+// let date = new Date(2015, 0, 2);
+
+// function getDateAgo(date, days) {
+//  let num = new Date(date)
+
+//  num.setDate(num.getDate() - days)
+
+//  return num.getDate()
+
+// }
+// // console.log(date)
+
+// console.log( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
+// console.log( getDateAgo(date, 2) ); // 31, (31 Dec 2014)
+// console.log( getDateAgo(date, 365) ); // 2, (2 Jan 2014)
+// // // P.S. Функция не должна изменять переданный ей объект date.
+
+// console.log(date)
+
+// let date = new Date(2016, 1, 28);
+// date.setDate(date.getDate() + 2);
+// console.log(date)
+
+// Напишите функцию getLastDayOfMonth(year, month), возвращающую последнее число месяца. Иногда это 30, 31 или даже февральские 28/29.
+
+// Параметры:
+
+// year – год из четырёх цифр, например, 2012.
+// month – месяц от 0 до 11.
+// К примеру, getLastDayOfMonth(2012, 1) = 29 (високосный год, февраль).
+
+// function getLastDayOfMonth(year, month){
+
+//    return new Date(year,month+1,0).getDate()
+
+// }
+
+// console.log(getLastDayOfMonth(2012, 1)) //29
+
+// Напишите функцию getSecondsToday(), возвращающую количество секунд с начала сегодняшнего дня.
+
+// Например, если сейчас 10:00, и не было перехода на зимнее/летнее время, то:
+
+// function getSecondsToday(){
+//   return (new Date().getSeconds())+(new Date().getMinutes()*60)+(new Date().getHours()*60*60)
+// }
+
+// console.log(getSecondsToday())
+// getSecondsToday() == 36000 // (3600 * 10)
+// Функция должна работать в любой день, т.е. в ней не должно быть конкретного значения сегодняшней даты.
+
+// Создайте функцию getSecondsToTomorrow(), возвращающую количество секунд до завтрашней даты.
+
+// Например, если сейчас 23:00, то:
+
+// getSecondsToTomorrow() == 3600
+// P.S. Функция должна работать в любой день, т.е. в ней не должно быть конкретного значения сегодняшней даты.
+
+// function getSecondsToTomorrow(){
+//   return (
+//     60*60*24
+//     )  -
+// (
+//     (new Date().getSeconds())+(new Date().getMinutes()*60)+(new Date().getHours()*60*60)
+//     )
+
+// }
+
+// console.log(getSecondsToTomorrow())
+
+// Напишите функцию formatDate(date), форматирующую date по следующему принципу:
+
+// Если спустя date прошло менее 1 секунды, вывести "прямо сейчас".
+// В противном случае, если с date прошло меньше 1 минуты, вывести "n сек. назад".
+// В противном случае, если меньше часа, вывести "m мин. назад".
+// В противном случае, полная дата в формате "DD.MM.YY HH:mm". А именно: "день.месяц.год часы:минуты", всё в виде двух цифр, т.е. 31.12.16 10:00.
+// Например:
+
+// function formatDate(date) {
+//   let milisecNow =
+//     new Date().getMilliseconds() +
+//     1000 *
+//       (new Date().getSeconds() +
+//         new Date().getMinutes() * 60 +
+//         new Date().getHours() * 60 * 60);
+
+//   let milisecCheckFerst =
+//     new Date(date).getMilliseconds() +
+//     1000 *
+//       (new Date(date).getSeconds() +
+//         new Date(date).getMinutes() * 60 +
+//         new Date(date).getHours() * 60 * 60);
+
+//   let twoNumYearArr = Array.from(date.getFullYear().toString());
+//   let twoNumYear = twoNumYearArr[2] + twoNumYearArr[3];
+
+//   let twoNumDateArr = Array.from(date.getDate().toString());
+//   let twoNumDate = [];
+//   if (twoNumDateArr.length === 1) {
+//     twoNumDate = '0' + twoNumDateArr[0];
+//   } else {
+//     twoNumDate = twoNumDateArr[0]+twoNumDateArr[1]
+//   }
+
+//   let twoNumMonthArr = Array.from((date.getMonth() + 1).toString());
+//   let twoNumMonth = [];
+//   if (twoNumMonthArr.length === 1) {
+//     twoNumMonth = '0' + twoNumMonthArr[0];
+//   } else {
+//     twoNumMonth = twoNumMonthArr[0];
+//   }
+
+//   if (
+//     milisecNow - milisecCheckFerst <= 999 &&
+//     milisecNow - milisecCheckFerst >= 1
+//   ) {
+//     return 'прямо сейчас';
+//   } else if (
+//     milisecNow - milisecCheckFerst <= 59999 &&
+//     milisecNow - milisecCheckFerst >= 1000
+//   ) {
+//     return `${(milisecNow - milisecCheckFerst) / 1000} сек. назад`;
+//   } else if (
+//     milisecNow - milisecCheckFerst <= 3599999 &&
+//     milisecNow - milisecCheckFerst >= 60000
+//   ) {
+//     return `${(milisecNow - milisecCheckFerst) / 1000 / 60} мин. назад`;
+//   } else {
+//     return `${twoNumDate}.${twoNumMonth}.${twoNumYear} ${date.getHours()}:${date.getMinutes()}`;
+//   }
+// }
+
+// console.log(formatDate(new Date(new Date() - 1))); // "прямо сейчас"
+
+// console.log(formatDate(new Date(new Date() - 30 * 1000))); // "30 сек. назад"
+
+// console.log(formatDate(new Date(new Date() - 5 * 60 * 1000))); // "5 мин. назад"
+
+// // вчерашняя дата вроде 31.12.2016, 20:00
+// console.log(formatDate(new Date(new Date - 86400 * 1000)));
 
 
 
