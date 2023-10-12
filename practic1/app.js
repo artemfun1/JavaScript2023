@@ -1546,17 +1546,876 @@ usersById = {
 // // вчерашняя дата вроде 31.12.2016, 20:00
 // console.log(formatDate(new Date(new Date - 86400 * 1000)));
 
+// Напишите функцию getDateDifference(), которая возвращает разницу в днях между двумя датами.
+
+// function getDateDifference(date1, date2){
+
+// let day = date2-date1
+
+//   return  day / (1000*60*60*24)
+// }
+
+// const date1 = new Date('2027-06-01');
+// const date2 = new Date('2027-06-10');
+// const difference = getDateDifference(date1, date2);
+// console.log(difference); // 9
+
+// Напишите функцию getTimeUntilDate(date), которая возвращает объект с информацией о том, сколько времени осталось от текущей даты до переданной.
+
+// function getTimeUntilDate(date){
+
+// let diff = date - new Date()
+// let days = Math.floor(diff / (1000*60*60*24))
+// let hours = Math.floor((diff - ((1000*60*60*24)*days))/(1000*60*60))
+// let minutes = Math.floor((diff - ((1000*60*60*24)*days) - ((1000*60*60)*hours)) /(1000*60))
+// let seconds = Math.floor((diff - ((1000*60*60*24)*days) - ((1000*60*60)*hours) - ((1000*60)*minutes)) / 1000)
+
+// function ObjDay(days,hours,minutes,seconds) {
+//   this.days = days;
+//   this.hours = hours;
+//   this.minutes = minutes;
+//   this.seconds = seconds;
+// }
+// let objDay = new ObjDay(days,hours,minutes,seconds)
+//  return objDay
+// }
+
+// const targetDate = new Date('2027-12-31T23:59:59');
+// const timeUntilTargetDate = getTimeUntilDate(targetDate);
+// console.log(timeUntilTargetDate);
+// // { days: 100, hours: 20, minutes: 45, seconds: 31 }
+
+// Напишите функцию isWeekends(), которая проверяет, является ли указанная дата выходным днем.
+
+// const date1 = new Date('2027-07-10');  // Суббота
+// const date2 = new Date('2027-07-12');  // Понедельник
+
+// function isWeekend(date){
+
+// if (date.getDay() === 6 || date.getDay() === 0){
+//   return true
+// } else return false
+
+// }
+
+// console.log(isWeekend(date1));  // true
+// console.log(isWeekend(date2));  // false
+
+// Напишите функцию, которая проверяет, является ли год високосным. Возвращает true, если да, иначе — false.
+
+// function isLeapYear(year){
+
+// let x = new Date(year,2,0)
+
+// if(x.getDate() === 29){
+//   return true
+// } else return false
+// }
+
+// console.log(isLeapYear(2023)); // false
+// console.log(isLeapYear(2024)); // true
+
+// Напишите функцию, которая возвращает последнее число месяца.
+
+// function getLastDayOfMonth(year,month){
+
+//   return new Date(year,month+1,0).getDate()
+// }
+
+// // июнь 2027
+// console.log(getLastDayOfMonth(2027, 5)); // 30
+
+// // февраль 2027
+// console.log(getLastDayOfMonth(2027, 1)); // 28
+
+// // январь 2027
+// console.log(getLastDayOfMonth(2027, 0)); // 31
+
+// Создайте класс Circle, который имеет поле radius, а также метод getArea(), высчитывающий площадь круга и округляющий её до двух знаков после запятой.
+
+// Сделайте так, чтобы код ниже работал:
+
+// class Circle {
+//   constructor(radius){
+//     this.rad = radius
+//   // this.
+//   }
+//   getArea() {
+//     return (Math.PI * Math.pow(this.rad,2)).toFixed(2)}
+// }
+
+// const circle = new Circle(5);
+// console.log(circle.getArea()); // "78.54"
+
+// Реализуйте класс Product, который имеет поля name и price. Также он имеет метод priceWithDiscount(), который возвращает обновленную цену с учетом переданной скидки (в процентах). Метод не изменяет само значение price в объекте, а только выводит обновленное.
+
+// Сделайте так, чтобы код ниже работал:
+
+// class Product{
+//   constructor(name, price){
+//     this.name = name;
+//   this.price = price;
+//   }
+
+//   priceWithDiscount(num){
+//     return this.price - ((this.price*num)/100)
+//   }
+
+// }
+
+// const product = new Product("Phone", 1000);
+// console.log(product.priceWithDiscount(10)); // 900
+// console.log(product.priceWithDiscount(20)); // 800
+
+// Реализуйте класс Person, который имеет поле friends (изначально пустой массив). Также он имеет методы:
+
+// addFriend() — принимает имя нового друга и добавляет его в массив friends;
+// showFriends() — выводит в консоль строку со всеми друзьями через запятую.
+// Сделайте так, чтобы код ниже работал:
+
+// class Person{
+//   constructor(){ this.friends = []}
+
+//   addFriend(string){
+//     this.friends.push(string)
+
+//   }
+//   showFriends(){
+//     return this.friends
+//   }
+// }
+
+// const person = new Person();
+// person.addFriend("Иван");
+// person.addFriend("Сергей");
+// person.addFriend("Игорь");
+// console.log(person.showFriends()); // Иван, Сергей, Игорь
+
+// 1. Создайте класс Animal с полями name, favoriteFood, а также методами:
+
+// makeSound() — вывести звук животного в консоль;
+// sayName() — вывести имя животного в консоль;
+// sayInfo() — вывести любимое блюдо животного в консоль.
+// 2. Создайте еще 2 класса, которые будут наследоваться от класса Animal — Cat, Dog. Переопределите для них метод makeSound(), чтобы он всегда возвращал соответствующий звук животного.
+
+// 3. Сделайте так, чтобы код ниже работал:
+
+// const dog = new Dog('Rex', 'Meat');
+// const cat = new Cat('Barsik', 'Fish');
+
+// class Animal {
+//   constructor(name, favoriteFood) {
+//     this.name = name;
+//     this.favoriteFood = favoriteFood;
+//   }
+//   makeSound() {}
+//   sayName() {
+//     console.log(`My name is ${this.name}`);
+//   }
+//   sayInfo() {
+//     console.log(`${this.name}'s favorite food is ${this.favoriteFood}`);
+//   }
+// }
+
+// class Dog extends Animal {
+//   constructor(name, favoriteFood) {
+//     super(name, favoriteFood);
+//   }
+//   makeSound() {
+//     console.log('Gav!');
+//   }
+// }
+
+// class Cat extends Animal {
+//   constructor(name, favoriteFood) {
+//     super(name, favoriteFood);
+//   }
+//   makeSound() {
+//     console.log('Meow');
+//   }
+// }
+
+// const dog = new Dog('Rex', 'Meat');
+// const cat = new Cat('Barsik', 'Fish');
+
+// console.log(dog);
+
+// cat.makeSound(); // Meow
+// dog.makeSound(); // Gav!
+
+// dog.sayName(); // My name is Rex
+// cat.sayName(); // My name is Barsik
+
+// dog.sayInfo(); // Rex's favorite food is Meat
+// cat.sayInfo(); // Barsik's favorite food is Fish
+
+// Создайте объект foo со свойством a равным 5. Также добавьте ему два метода:
+
+// bar() — с помощью ключевого слова function;
+// baz() — с помощью стрелочной функции.
+// Внутри методов выведите в консоль this.a и затем выполните следующий код:
+
+// Проанализируйте результаты вызовов и определите для себя, почему произошел тот или иной вывод.
+
+// class Foo{
+//   constructor(a){
+//     this.a = a
+//   }
+//   bar = function(){
+//     console.log(this.a)
+//   }
+//   baz = ()=> console.log(this.a)
+// }
+
+// const foo = new Foo(5)
+
+// foo.bar();
+// foo.baz();
+
+// let foo = { a: 5 };
+
+// foo.bar = function() {
+//   console.log(this.a);
+// };
+
+// foo.baz = (() => {
+//   console.log(this.a);
+// }).bind(foo)
+
+// foo.bar();
+// foo.baz();
+
+// const boxFactory = {
+// 	type: 'box',
+// 	count: 0,
+// 	produce: () => {
+// 		this.count++;
+// 		return 'Box №' + this.count;
+// 	}
+// }
+
+// const produceBox = (produceFn) => {
+// 	const boxName = produceFn();
+// 	console.log(boxName);
+// }
+
+// for(let i = 0; i < 25; i++) {
+// 	produceBox(boxFactory.produce);
+// }
+// // Отредактируйте код так, чтобы при его работе выводились корректные номера коробок. Функцию produceBox() править нельзя.
+
+// let room = {
+//   number: 23
+// };
+
+// let meetup = {
+//   title: "Conference",
+//   participants: [{name: "John"}, {name: "Alice"}],
+//   place: room // meetup ссылается на room
+// };
+
+// room.occupiedBy = meetup;
+
+// console.log(JSON.stringify(meetup, ['title', 'participants','name','place','number'],0))
+
+// console.log(JSON.stringify(meetup, function replacer(key, value) {
+//   console.log(`${key}: ${value}`);
+//   return (key == 'occupiedBy') ? undefined : value;
+// },2));
+// console.log(JSON.parse)
+
+// // let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+
+// // let meetup = JSON.parse(str, function(key, value) {
+// //   if (key == 'date') return new Date(value);
+// //   return value;
+// // });
+
+// // console.log(meetup)
+
+// // let user = {
+// //   name: "Василий Иванович",
+// //   age: 35
+// // };
+
+// // let user1 = JSON.parse(JSON.stringify(user))
+// // console.log(user1)
+
+// // Напишите функцию replacer для JSON-преобразования, которая удалит свойства, ссылающиеся на meetup:
+
+// let room = {
+//   number: 23,
+// };
+
+// let meetup = {
+//   title: "Совещание",
+//   occupiedBy: [{name: "Иванов"}, {name: "Петров"}],
+//   place: room
+// };
+
+// // цикличные ссылки
+// room.occupiedBy = meetup;
+// meetup.self = meetup;
+
+// console.log(JSON.stringify(meetup, function replacer(key, value) {
+// console.log(`${key}: ${value}`);
+//       return (key === 'occupiedBy' && value === room.occupiedBy ) ? undefined :
+//       (key === 'self') ? undefined :
+//       value;
+
+// },0));
+
+// // /* в результате должно быть:
+// {
+//   "title":"Совещание",
+//   "occupiedBy":[{"name":"Иванов"},{"name":"Петров"}],
+//   "place":{"number":23}
+// }
+// */
+
+// Напишите функцию sumTo(n), которая вычисляет сумму чисел 1 + 2 + ... + n.
+
+// Например:
+
+// sumTo(1) = 1
+// sumTo(2) = 2 + 1 = 3
+// sumTo(3) = 3 + 2 + 1 = 6
+// sumTo(4) = 4 + 3 + 2 + 1 = 10
+// ...
+// sumTo(100) = 100 + 99 + ... + 2 + 1 = 5050
+// Сделайте три варианта решения:
+
+// С использованием цикла.
+// Через рекурсию, т.к. sumTo(n) = n + sumTo(n-1) for n > 1.
+// С использованием формулы арифметической прогрессии.
+// Пример работы вашей функции:
+
+// function sumTo1(n) {
+//   let sum = 0
+//   for (i = 0;i<=n;i++){
+//       sum = sum + i
+//   }
+//   return sum
+//  }
+
+// function sumTo2(n, sum = 0) {
+//     if (n === 0) return sum;
+//    return sumTo2(n-1, sum + n )
+// }
+
+// function sumTo3(n) { /*... ваш код ... */ }
+
+// console.log( sumTo1(100) ); // 5050
+// console.log( sumTo2(100) ); // 5050
+// console.log( sumTo3(100) ); // 5050
+// // P.S. Какой вариант решения самый быстрый? Самый медленный? Почему?
+
+// // P.P.S. Можно ли при помощи рекурсии посчитать sumTo(100000)?
+
+// let list = {
+//   value: 1,
+//   next: {
+//     value: 2,
+//     next: {
+//       value: 3,
+//       next: {
+//         value: 4,
+//         next: null
+//       }
+//     }
+//   }
+// };
+
+// function printList(list){
+
+//   console.log(list.value)
+//   if (list.next) {
+//     printList(list.next); // делаем то же самое для остальной части списка
+//   }
+// }
+
+// printList(list)
+
+// function f() {
+//   let showArg = () => console.log(arguments[0]);
+//   showArg();
+// }
+
+// f('dddd'); // 1
+
+// let arr = 'hello'
+// // let arr1 = [7,8]
+// function sayHi(name){
+//   console.log(`${arr}  and ${name}`)
+// }
+
+// sayHi(arr)
+
+// let name = 'Hello'
+
+// function sayHi(){
+//   console.log('say '+name)
+// }
+
+// name = 'HELLLLOOOOOO'
+
+// sayHi()
+
+// function sum(a){
+//   return function (b){
+// console.log(a+b)
+//   }
+// }
+
+// sum(1)(2);
+// sum(5)(-1) ;
+
+// У нас есть встроенный метод arr.filter(f) для массивов. Он фильтрует все элементы с помощью функции f. Если она возвращает true, то элемент добавится в возвращаемый массив.
+
+// Сделайте набор «готовых к употреблению» фильтров:
+
+// inBetween(a, b) – между a и b (включительно).
+// inArray([...]) – находится в данном массиве.
+// Они должны использоваться таким образом:
+
+// arr.filter(inBetween(3,6)) – выбирает только значения между 3 и 6 (включительно).
+// arr.filter(inArray([1,2,3])) – выбирает только элементы, совпадающие с одним из элементов массива
+// Например:
+
+/* .. ваш код для inBetween и inArray */
+
+// function inBetween(a, b){
+// return item => item>=a && item<=b
+// }
+
+// function inArray(ar){
+//   return item => ar.includes(item)
+// }
+
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+
+// console.log( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
+
+// console.log( arr.filter(inArray([1, 2, 10])) ); // 1,2
+
+// У нас есть массив объектов, который нужно отсортировать:
+
+// let users = [
+//   { name: 'John', age: 20, surname: 'Johnson' },
+//   { name: 'Pete', age: 18, surname: 'Peterson' },
+//   { name: 'Ann', age: 19, surname: 'Hathaway' },
+// ];
+// Обычный способ был бы таким:
+
+// // по имени (Ann, John, Pete)
+// users.sort((a, b) => a.name > b.name ? 1 : -1);
+
+// // по возрасту (Pete, Ann, John)
+// users.sort((a, b) => a.age > b.age ? 1 : -1);
+// Можем ли мы сделать его короче, например вот таким?
+
+// function byField(s){
+
+//   return (a, b) => a[s] > b[s]? 1 : -1
+
+// }
+
+// console.log(users.sort(byField('name')));
+
+// console.log(users.sort(byField('age')));
+
+// То есть чтобы вместо функции мы просто писали byField(fieldName).
+
+// Напишите функцию byField, которая может быть использована для этого.
+
+// function makeArmy() {
+//   let shooters = [];
+
+//   let i = 0;
+//   while (i < 10) {
+//     let j = i
+//     let shooter = function() { // функция shooter
+//       console.log(j); // должна выводить порядковый номер
+//     };
+//     shooters.push(shooter); // и добавлять стрелка в массив
+//     i++;
+//   }
+
+//   // ...а в конце вернуть массив из всех стрелков
+//   return shooters;
+// }
+
+// let army = makeArmy();
+
+// // все стрелки выводят 10 вместо их порядковых номеров (0, 1, 2, 3...)
+// army[0](); // 10 от стрелка с порядковым номером 0
+// army[1](); // 10 от стрелка с порядковым номером 1
+// army[2](); // 10 ...и т.д.
+
+// let ar =[1,2]
+
+// for( i=0;i<ar.length;i++){
+//   console.log(ar[i])
+// }
+// // console.log(i)
+
+// for( i=0;i<ar.length;i++){
+//   console.log(ar[i])
+// }
+
+// console.log(i)
+
+// console.log(globalThis)
+// console.log(window)
+
+// Измените код makeCounter() так, чтобы счётчик мог уменьшать и устанавливать значение:
+
+// counter() должен возвращать следующее значение (как и раньше).
+// counter.set(value) должен устанавливать счётчику значение value.
+// counter.decrease() должен уменьшать значение счётчика на 1.
+// Посмотрите код из песочницы с полным примером использования.
+
+// P.S. Для того, чтобы сохранить текущее значение счётчика, можно воспользоваться как замыканием, так и свойством функции. Или сделать два варианта решения: и так, и так.
+
+// function makeCounter() {
+
+//   function counter() {
+//     return counter.count++;
+//   };
+
+//   counter.count = 0;
+
+//   counter.set = function (value){
+//     return counter.count = value
+//   }
+//   counter.decrease = function(){
+//     return counter.count = counter.count -1
+
+//   }
+
+//   return counter;
+// }
+
+// let counter = makeCounter();
+
+// counter.count = 10;
+// counter.set(3)
+// counter.decrease()
+
+// console.log( counter() ); // 10
+
+// Напишите функцию sum, которая бы работала следующим образом:
+
+// function sum(a,b){
+//   let count = a
+//    return function f(b){
+//      count = count + b
+//      console.log(count)
+//      return f
+//   }
+// }
+
+// function sum(a){
+//   let count = a
+//     return  function f(a){
+//       f.valueOf = function () {
+//         return count
+//       };
+//       count = count + a
+//      return f
+//   }
+// }
+
+// console.log(sum(1)(2))// == 3); // 1 + 2
+// console.log(sum(1)(2)(3))// == 6); // 1 + 2 + 3
+// console.log(sum(5)(-1)(2) == 6)
+// console.log(sum(6)(-1)(-2)(-3) == 0)
+// console.log(sum(0)(1)(2)(3)(4)(5) == 15)
+// // P.S. Подсказка: возможно вам стоит сделать особый метод преобразования в примитив для функции.
+
+// const a = {name:'ivan'}
+
+// let start = Date.now()
+
+// let times = [];
+
+// setTimeout(function run() {
+//   times.push(Date.now() - start); // запоминаем задержку от предыдущего вызова
+
+//   if (start + 100 < Date.now()) console.log(times); // показываем задержку через 100 мс
+//   else setTimeout(run); // если нужно ещё запланировать
+// });
+
+// Напишите функцию printNumbers(from, to), которая выводит число каждую секунду, начиная от from и заканчивая to.
+
+// Сделайте два варианта решения.
+
+// Используя setInterval.
+// Используя рекурсивный setTimeout.
+
+// function printNumbers(from, to){
+
+//   let ar =[]
+//   for(i=from;i<=to;i++){
+//     ar.push(i)
+//   }
+
+//   let int = setTimeout(foor,1000)
+
+//   let num = 0
+
+//   function foor(){
+//   console.log(ar[num])
+//   num++
+
+//   if(ar[num]===undefined){
+//     clearTimeout(int)
+//     console.log('clear')
+//   }
+//   }
+// setTimeout(foor,1000)
+
+// };
+
+// printNumbers(1,2)
+
+// let i = 0;
+
+// setTimeout(() => console.log(i), 100); // ?
+
+// // предположим, что время выполнения этой функции >100 мс
+// for(let j = 0; j < 100000000; j++) {
+//   i++;
+// }
+
+// Создайте объект foo со свойством a равным 5. Также добавьте ему два метода:
+
+// bar() — с помощью ключевого слова function;
+// baz() — с помощью стрелочной функции.
+// Внутри методов выведите в консоль this.a и затем выполните следующий код:
+
+// foo.bar();
+// foo.baz();
+// Проанализируйте результаты вызовов и определите для себя, почему произошел тот или иной вывод.
+
+// let foo = { a: 5 };
+// foo.bar = function () {
+//   console.log(this.a);
+// };
+
+// foo.baz = () => {
+//   console.log(this.a);
+// }
+
+// foo.bar();
+// foo.baz();
+
+// Отредактируйте код так, чтобы при его работе выводились корректные номера коробок. Функцию produceBox() править нельзя.
+
+// const boxFactory = {
+// 	type: 'box',
+// 	count: 0,
+// 	produce(){
+// 		this.count++;
+// 		return 'Box №' + this.count;
+// 	}
+// }
+
+// const produceBox = (produceFn) => {
+// 	const boxName = produceFn();
+// 	console.log(boxName);
+// }
+
+// for(let i = 0; i < 25; i++) {
+// 	produceBox(boxFactory.produce.bind(boxFactory));
+// }
+
+// function f() {
+//   console.log(this);
+// }
+// let user = {
+//   g: f.bind(null)
+// };
+
+// user.g();  // window
+
+// function f() {
+//   console.log(this.name);
+// }
+
+// f = f.bind( {name: "Вася"} )
+// f = f.bind( {name: "Петя"} );
+// f(); // Вася
+
+// Вызов askPassword() в приведённом ниже коде должен проверить пароль и затем вызвать user.loginOk/loginFail в зависимости от ответа.
+
+// Однако, его вызов приводит к ошибке. Почему?
+
+// Исправьте выделенную строку, чтобы всё работало (других строк изменять не надо).
+
+// Объект user был изменён. Теперь вместо двух функций loginOk/loginFail у него есть только одна – user.login(true/false).
+
+// Что нужно передать в вызов функции askPassword в коде ниже, чтобы она могла вызывать функцию user.login(true) как ok и функцию user.login(false) как fail?
+
+// function askPassword(ok, fail) {
+//   // let password = prompt("Password?", '');
+//   let password = "123"
+//   if (password == "123") ok();
+//   else fail();
+// }
+
+// let user = {
+//   name: 'John',
+
+//   login(result) {
+//     console.log( this.name + (result ? ' logged in' : ' failed to log in') );
+//   }
+// };
+
+// askPassword(user.login.bind(user,1), user.login.bind(user,0)); // ?
+// Ваши изменения должны затрагивать только выделенный фрагмент кода.
+
+// let foo = {
+// a: 5 ,
+// bar(){
+// let baz=() => console.log(this.a);
+// baz()
+// },
+// baz1:() => console.log(this.a)
+// }
+
+// foo.bar();
+// foo.baz1()
+
+// let user = {
+//   firstName: "Ilya",
+//   sayHi() {
+//     let arrow = () => console.log(this.firstName);
+//     arrow();
+//   }
+// };
+
+// user.sayHi();
+
+// let user = {};
+
+// Object.defineProperty(user, "name", {
+//   value: "John"
+// });
+
+// let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
+
+// console.log( JSON.stringify(descriptor, null, 2 ) );
+// console.log(user)
+
+// let user = {
+//   name: "John",
+//   surname: "Smith",
+
+//   get fullName() {
+//     return `${this.name} ${this.surname}`;
+//   }
+// };
+
+// console.log(user.fullName); // John Smith
+
+// let user = {
+//   get name() {
+//     return this._name;
+//   },
+
+//   set name(value) {
+//     if (value.length < 4) {
+//       console.log("Имя слишком короткое, должно быть более 4 символов");
+//       return;
+//     }
+//     this._name = value;
+//   }
+// };
+
+// user.name = "Pujy";
+// console.log(user._name)
+// console.log(user.name); // Pete
+
+// function f() {
+//   console.log("Hello!");
+// }
+
+// Function.prototype.defer = function(time){
+//   return setTimeout(this,time)
+// }
+
+// f.defer(1000);
+
+// Function.prototype.defer = function (time) {
+//   return function (...args) {
+//     setTimeout(() => f.apply(this, args), time);
+//   };
+// };
+
+// function f(a, b) {
+//   console.log(a + b);
+// }
+
+// f.defer(1000)(1, 2); // выведет 3 через 1 секунду.
+
+// Имеется объект dictionary, созданный с помощью Object.create(null) для хранения любых пар ключ/значение.
+
+// Добавьте ему метод dictionary.toString(), который должен возвращать список ключей, разделённых запятой. Ваш toString не должен выводиться при итерации объекта с помощью цикла for..in.
+
+// Вот так это должно работать:
+
+// let dictionary = Object.create(null);
+
+// ваш код, который добавляет метод dictionary.toString
+
+// dictionary.toString = function(){
+//   let ar = []
+//   for(let key in dictionary) {
+//     ar.push(key)
+//   }
+//   return String(ar)
+// }
+
+// Object.defineProperty(dictionary, 'toString', {
+//   value: function () {
+//      return Object.keys(this).join();
+//   },
+//   enumerable: false,
+// });
+
+// value: function () {
+//   let ar = [];
+//   for (let key in dictionary) {
+//     ar.push(key);
+//   }
+//   return String(ar);
+// },
 
 
+// function Rabbit(name) {
+//   this.name = name;
+// }
+// Rabbit.prototype.sayHi = function() {
+//   console.log(this.name);
+// };
+
+// let rabbit = new Rabbit("Rabbittt");
 
 
+// console.dir(rabbit)
 
 
-
-
-
-
-
-
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayHi() {
+//     alert(this.name);
+//   }
+// }
+// // Использование:
+// let user = new User("Иван");
+// user.sayHi();
 
 
