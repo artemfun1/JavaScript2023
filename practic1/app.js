@@ -2650,7 +2650,6 @@ usersById = {
 
 // user.sayHi()
 
-
 // class Human{
 //   constructor(name){
 //     this.name = name
@@ -2667,10 +2666,177 @@ usersById = {
 //   }
 // }
 
-
 // let user = new User('aaaa')
 
 // user.sayHi()
 
 // console.log({}.toString.call(User))
+
+// try {
+//   lalala; // ошибка, переменная не определена!
+// } catch(err) {
+//   console.log(err.name); // ReferenceError
+//   console.log(err.message); // lalala is not defined
+//   console.log(err.stack); // ReferenceError: lalala is not defined at (...стек вызовов)
+
+//   // Можем также просто вывести ошибку целиком
+//   // Ошибка приводится к строке вида "name: message"
+//   console.log(err); // ReferenceError: lalala is not defined
+// }
+// "name":"John",
+
+// let json = '{ "age": 30 }'; // данные неполны
+
+// let user
+
+// try {
+
+//   user = JSON.parse(json); // <-- выполнится без ошибок
+
+//   if (!user.name) {
+//     throw new SyntaxError("Данные неполны: нет имени"); // (*)
+//   }
+
+//   console.log( user.name );
+
+// } catch(e) {
+//   console.log( "JSON Error: " + e.message ); // JSON Error: Данные неполны: нет имени
+// }
+
+// console.log(user)
+// function readData() {
+// let json = '{ "age": 30 }'; // данные неполны
+// try {
+
+//   let user = JSON.parse(json);
+
+//   if (!user.name) {
+//     throw new SyntaxError("Данные неполны: нет имени");
+//   }
+
+//   blabla(); // неожиданная ошибка
+
+//   console.log( user.name );
+
+// } catch(e) {
+
+//   if (e.name == "SyntaxError") {
+//     console.log( "JSON Error: " + e.message );
+//   } else {
+//     throw e; // проброс (*)
+//   }
+
+// }
+// }
+
+// try {
+//   readData();
+// } catch (e) {
+//   console.log( "Внешний catch поймал: " + e ); // поймал!
+// }
+
+// function func() {
+
+//   try {
+//     return 1;
+
+//   } catch (e) {
+//     /* ... */
+//   } finally {
+//     console.log( 'finally' );
+//   }
+// }
+
+// console.log( func() );
+
+// window.onerror = function(message, url, line, col, error) {
+//   console.log(`${message}\n В ${line}:${col} на ${url}, and ${error}`);
+// };
+
+// function readData() {
+//   badFunc(); // Ой, что-то пошло не так!
+// }
+
+// readData();
+
+// class ReadError extends Error {
+//   constructor(message, cause) {
+//     super(message);
+//     this.cause = cause;
+//     this.name = 'ReadError';
+//   }
+// }
+
+// class ValidationError extends Error {
+//   /*...*/
+// }
+// class PropertyRequiredError extends ValidationError {
+//   /* ... */
+// }
+
+// function validateUser(user) {
+//   if (!user.age) {
+//     throw new PropertyRequiredError('age');
+//   }
+
+//   if (!user.name) {
+//     throw new PropertyRequiredError('name');
+//   }
+// }
+
+// function readUser(json) {
+//   let user;
+
+//   try {
+//     user = JSON.parse(json);
+//   } catch (err) {
+//     if (err instanceof SyntaxError) {
+//       throw new ReadError('Синтаксическая ошибка', err);
+//     } else {
+//       throw err;
+//     }
+//   }
+
+//   try {
+//     validateUser(user);
+//   } catch (err) {
+//     if (err instanceof ValidationError) {
+//       throw new ReadError('Ошибка валидации', err);
+//     } else {
+//       throw err;
+//     }
+//   }
+// }
+
+// try {
+//   readUser('{bad json}');
+// } catch (e) {
+//   if (e instanceof ReadError) {
+//     console.log(e);
+//     // Исходная ошибка: SyntaxError:Unexpected token b in JSON at position 1
+//     console.log('Исходная ошибка: ' + e.cause);
+//   } else {
+//     throw e;
+//   }
+// }
+
+// class FormatError extends SyntaxError{
+//   constructor(massage){
+//     super(massage)
+//     this.name = 'FormatError'
+
+//   }
+// }
+
+// let err = new FormatError("ошибка форматирования");
+
+// console.log( err.message ); // ошибка форматирования
+// console.log( err.name ); // FormatError
+// console.log( err.stack ); // stack
+
+// console.log( err instanceof FormatError ); // true
+// console.log( err instanceof SyntaxError ); // true (потому что наследует от SyntaxError)
+
+
+
 
