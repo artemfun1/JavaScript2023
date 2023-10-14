@@ -1,4 +1,4 @@
-// "use strict";
+'use strict';
 
 // let num = 42
 // console.log(num)
@@ -2392,7 +2392,6 @@ usersById = {
 //   return String(ar);
 // },
 
-
 // function Rabbit(name) {
 //   this.name = name;
 // }
@@ -2402,20 +2401,276 @@ usersById = {
 
 // let rabbit = new Rabbit("Rabbittt");
 
-
 // console.dir(rabbit)
-
 
 // class User {
 //   constructor(name) {
 //     this.name = name;
 //   }
 //   sayHi() {
-//     alert(this.name);
+//     console.log(this.name);
 //   }
 // }
 // // Использование:
 // let user = new User("Иван");
 // user.sayHi();
 
+// function User(name) {
+//   this.name = name;
+// }
+// // каждый прототип функции имеет свойство constructor по умолчанию,
+// // поэтому нам нет необходимости его создавать
+
+// // 2. Добавляем метод в прототип
+// User.prototype.sayHi = function() {
+//   console.log(this.name);
+// };
+
+// // Использование:
+// let user = new User("Иван");
+
+// user.sayHi();
+
+// console.dir(User)
+
+// let User = class MyClass {
+//   sayHi() {
+//     alert(MyClass); // имя MyClass видно только внутри класса
+//   }
+// };
+
+// new User().sayHi();
+
+// class User {
+
+//   constructor(name) {
+//     // вызывает сеттер
+//     this.name = name;
+//   }
+
+//   get name() {
+//     return this.name;
+//   }
+
+//   set name(value) {
+//     this.name = value;
+//   }
+
+// }
+
+// let user = new User("Иван");
+// console.log(user); // Иван
+
+// user = new User("555"); // Имя слишком короткое.
+
+// class Clock {
+//   constructor( clock ) {
+//     this.clock = clock;
+//   }
+
+//   stop() {
+//     clearInterval(this.timer);
+//   }
+
+//   start() {
+//     this.render();
+//     this.timer = setInterval(() => this.render(), 1000);
+//   }
+// }
+
+// let clock = new Clock();
+// clock.start();
+
+// class Clock {
+//   constructor( stringType ) {
+//     this.stringType = stringType;
+//   }
+
+//   render() {
+//     let date = new Date();
+
+//     let hours = date.getHours();
+//     if (hours < 10) hours = '0' + hours;
+
+//     let mins = date.getMinutes();
+//     if (mins < 10) mins = '0' + mins;
+
+//     let secs = date.getSeconds();
+//     if (secs < 10) secs = '0' + secs;
+
+//     let output = this.stringType
+//       .replace('h', hours)
+//       .replace('m', mins)
+//       .replace('s', secs);
+
+//     console.log(output);
+//   }
+
+//   stop() {
+//     clearInterval(this.timer);
+//   }
+
+//   start() {
+//     this.timer = setInterval(() => this.render(), 1000);
+//   }
+// }
+
+// let clock = new Clock('h:m:s');
+
+// clock.start();
+// clock.stop()
+
+// class Animal{
+//   constructor(name){
+//     this.name = name
+//     this.speed = 0
+//   }
+//   run(speed){
+//     this.speed = speed
+//     console.log(`${this.name} бежит со скоростью ${this.speed}.`)
+//   }
+//   stop(){
+//     this.speed = 0
+//     console.log(`${this.name} стоит неподвижно.`);
+//   }
+// }
+
+// let animal = new Animal("Мой питомец")
+
+// class Rabbit extends Animal{
+//   constructor(name, earLength) {
+//     super()
+//     // this.speed = 0;
+//     // this.name = name;
+//     this.earLength = earLength;
+//   }
+//   hide(){
+//     console.log(`${this.name} прячется!`)
+//   }
+//   stop(){
+//     super.stop()
+//   }
+// }
+
+// let rabbit = new Rabbit("Белый кролик",10)
+
+// rabbit.stop()
+// rabbit.run(19)
+// console.log(rabbit.name)
+// console.log(rabbit.speed)
+
+// class Animal {
+//   name = 'animal';
+
+//   constructor() {
+//     console.log(this.name); // (*)
+//   }
+// }
+
+// class Rabbit extends Animal {
+//   name = 'rabbit';
+// }
+
+// new Animal(); // animal
+// new Rabbit(); // animal
+
+// let animal = {
+//     eat()  {console.log(1)}
+//     // ...
+
+// }
+
+// let rabbit = {
+//   __proto__: animal,
+//   eat(){super.eat()}
+
+// };
+
+// rabbit.eat();
+
+// class Article {
+//   constructor(title, date) {
+//     this.title = title;
+//     this.date = date;
+//   }
+//   static compare(articleA, articleB) {
+//     return articleA.date - articleB.date;
+//   }
+// }
+// // использование
+// let articles = [
+//   new Article("HTML", new Date(2019, 1, 1)),
+//   new Article("CSS", new Date(2019, 0, 1)),
+//   new Article("JavaScript", new Date(2019, 11, 1))
+// ];
+
+// articles.sort(Article.compare);
+// console.log( articles[0].title ); // CSS
+
+// class Rabbit extends Object {
+
+//   constructor(name) {
+//     super()
+//     this.name = name;
+//   }
+
+// }
+
+// let rabbit = new Rabbit("Кроль");
+
+// console.log(rabbit.hasOwnProperty('name')); // Ошибка
+
+// class CoffeeMachine {
+//   #waterAmount = 0;
+
+//   get waterAmount() {
+//     return this.#waterAmount;
+//   }
+
+//   set waterAmount(value) {
+//     if (value < 0) throw new Error("Отрицательный уровень воды");
+//     this.#waterAmount = value;
+//   }
+// }
+// // создаём новую кофеварку
+// let coffeeMachine = new CoffeeMachine();
+// // устанавливаем количество воды
+// coffeeMachine.waterAmount = 4; // Error: Отрицательное количество воды
+// console.log(coffeeMachine)
+
+// class User {
+//  fieldName = 1
+//   sayHi() {
+//      let fieldName = "name";
+//     console.log(`Hello, ${this[fieldName]}`);
+//   }
+// }
+
+// let user = new User()
+
+// user.sayHi()
+
+
+// class Human{
+//   constructor(name){
+//     this.name = name
+//   }
+//   sayHi(){
+//     console.log(`Hello! My name is ${this.name}`)
+//   }
+// }
+
+// class User extends Human{
+//   constructor(arg){
+//     super(arg)
+
+//   }
+// }
+
+
+// let user = new User('aaaa')
+
+// user.sayHi()
+
+// console.log({}.toString.call(User))
 
