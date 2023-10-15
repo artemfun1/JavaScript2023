@@ -2838,5 +2838,3 @@ usersById = {
 // console.log( err instanceof SyntaxError ); // true (потому что наследует от SyntaxError)
 
 
-
-
