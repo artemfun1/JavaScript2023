@@ -1,25 +1,65 @@
-body{
-  background-color: black;
-}
-div {
-  color:aliceblue;
-  font-size: 20px;
-}
-p{
-  color: aliceblue;
+/* html {
+  background-color: #7f7f7f;
 }
 
-.notification {
-  position: fixed;
-  z-index: 1000;
-  padding: 5px;
-  border: 1px solid black;
-  font-size: 20px;
-  background: white;
-  text-align: center;
+.div1 {
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div2 {
+  background-color: #fff;
+  overflow: hidden;
+  order: 2;
 }
 
-.welcome {
-  background: #b80000;
-  color: yellow;
+.arrow {
+  padding: 0;
+  background: #ddd;
+  border-radius: 15px;
+  border: 1px solid gray;
+  font-size: 24px;
+  line-height: 24px;
+  color: #444;
+  display: block;
+  position: relative;
 }
+
+.arrow1 {
+  order: 1;
+  margin-left: 10px;
+}
+.arrow2 {
+  order: 3;
+  margin-right: 10px;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.arrow:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+ul {
+  height: 130px;
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+}
+
+ul img {
+  width: 130px;
+  height: 130px;
+  display: block; 
+}
+
+ul li {
+  display: inline-block; 
+} */
