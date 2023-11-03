@@ -616,37 +616,37 @@ html_leng.lang = 'ru';
 //     this.parentNode.style.display = 'none';
 //   });
 // }
-const div1 = document.querySelector('.div1');
-const div2 = document.querySelector('.div2');
-const img = document.querySelectorAll('img');
-const arrow1 = document.querySelector('.arrow1');
-const arrow2 = document.querySelector('.arrow2');
-const ul = document.querySelector('ul');
+// const div1 = document.querySelector('.div1');
+// const div2 = document.querySelector('.div2');
+// const img = document.querySelectorAll('img');
+// const arrow1 = document.querySelector('.arrow1');
+// const arrow2 = document.querySelector('.arrow2');
+// const ul = document.querySelector('ul');
 
-arrow1.addEventListener('click', () =>
-  div2.scrollBy({
-    top: 0,
-    left: -widthThreeImg,
-    behavior: 'smooth',
-  })
-);
-arrow2.addEventListener('click', () =>
-  div2.scrollBy({
-    top: 0,
-    left: widthThreeImg,
-    behavior: 'smooth',
-  })
-);
+// arrow1.addEventListener('click', () =>
+//   div2.scrollBy({
+//     top: 0,
+//     left: -widthThreeImg,
+//     behavior: 'smooth',
+//   })
+// );
+// arrow2.addEventListener('click', () =>
+//   div2.scrollBy({
+//     top: 0,
+//     left: widthThreeImg,
+//     behavior: 'smooth',
+//   })
+// );
 
-const widthThreeImg = img[3].offsetWidth * 3;
+// const widthThreeImg = img[3].offsetWidth * 3;
 
-div1.style.width = `${
-  widthThreeImg +
-  arrow1.offsetWidth +
-  arrow2.offsetWidth +
-  parseInt(getComputedStyle(arrow1).marginLeft) +
-  parseInt(getComputedStyle(arrow2).marginRight)
-}px`;
+// div1.style.width = `${
+//   widthThreeImg +
+//   arrow1.offsetWidth +
+//   arrow2.offsetWidth +
+//   parseInt(getComputedStyle(arrow1).marginLeft) +
+//   parseInt(getComputedStyle(arrow2).marginRight)
+// }px`;
 
-ul.style.width = `${img.length * img[3].offsetWidth}px`;
-div2.style.width = `${widthThreeImg}px`;
+// ul.style.width = `${img.length * img[3].offsetWidth}px`;
+// div2.style.width = `${widthThreeImg}px`;
