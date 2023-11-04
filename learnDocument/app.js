@@ -650,3 +650,207 @@ html_leng.lang = 'ru';
 
 // ul.style.width = `${img.length * img[3].offsetWidth}px`;
 // div2.style.width = `${widthThreeImg}px`;
+
+// const container = document.querySelector('#container')
+// const button = document.querySelector('.remove-button')
+// container.addEventListener('click',foo)
+// function foo(event){
+//   let elemClick = event.target
+//   if (elemClick.outerHTML === button.outerHTML){
+//     elemClick.parentNode.hidden = true
+//   }
+// }
+
+// const tree = document.querySelector('.tree');
+
+// tree.addEventListener('click', foo);
+// tree.addEventListener('mouseover',mouseover)
+// tree.addEventListener('mouseout',mouseout)
+
+// function foo(event){
+//   let targetMouse = event.target
+// if((targetMouse.constructor.name === 'HTMLLIElement')&&(targetMouse.firstElementChild )){
+
+//  if( !targetMouse.firstElementChild.hidden){
+//   targetMouse.firstElementChild.hidden = true
+//  } else if(targetMouse.firstElementChild.hidden ===true){
+//   targetMouse.firstElementChild.hidden = false
+//  } else if(targetMouse.firstElementChild.hidden ===false)
+//  targetMouse.firstElementChild.hidden = true
+// }
+// }
+// function mouseover(event){
+// let targetMouse = event.target
+// if(targetMouse.constructor.name === 'HTMLLIElement'){
+// //  targetMouse.style.fontWeight = 'bold'
+//  console.log(targetMouse.firstChild)
+// }
+// }
+// function mouseout(event){
+//   let targetMouse = event.target
+//   if(targetMouse.style.fontWeight === 'bold'){
+//     // targetMouse.style.fontWeight = 'bold'
+//    }
+// }
+
+// const tbody = document.querySelector('tbody');
+// const table = document.querySelector('thead');
+// const unMutNodelistRow = tbody.querySelectorAll('tr')
+// let elemRow = tbody.getElementsByClassName('tr');
+// table.addEventListener('click', foo);
+
+// for(let elem of unMutNodelistRow){
+//   elem.setAttribute('class','tr')
+// }
+
+// function foo(event) {
+// let index = 0
+//   switch (event.target.getAttribute('data-type')) {
+//     case 'number':
+//       index = 0
+//       sortAge(index);
+
+//       break;
+
+//     case 'string':
+//       index = 1
+//       sortName(index);
+//       break;
+//   }
+// }
+
+// function sortAge(index) {
+
+//   for(let j=0;j<elemRow.length+1;j++){
+//     for(let i =0; i<elemRow.length-1;i++){
+//       if(+elemRow[i].cells[index].textContent > +elemRow[i+1].cells[0].textContent){
+//         tbody.append(elemRow[i])
+//       }
+//       }
+//     }
+// }
+
+// function sortName(index) {
+//   for(let j=0;j<elemRow.length+1;j++){
+//     for(let i =0; i<elemRow.length-1;i++){
+//       if(elemRow[i].cells[index].textContent > elemRow[i+1].cells[1].textContent){
+//         tbody.append(elemRow[i])
+//       }
+//       }
+//     }
+// }
+
+// const doc = document;
+
+// const button = document.querySelectorAll('button');
+// doc.addEventListener('mouseover', fooOver);
+// doc.addEventListener('mouseout', fooOut);
+
+// const arrayBut = Array.from(button);
+
+// function fooOver(event) {
+//   const divEl = document.createElement('div');
+//   divEl.classList.add('tooltip');
+//   doc.body.prepend(divEl);
+//   divEl.hidden = true;
+
+//   if (arrayBut.includes(event.target, 0)) {
+//     divEl.hidden = false;
+//     divEl.innerHTML = `${event.target.dataset.tooltip}`;
+
+//     divEl.style.top = `${
+//       event.target.getBoundingClientRect().top - divEl.offsetHeight - 5
+//     }px `;
+
+//     divEl.style.left = `${event.target.getBoundingClientRect().left}px `;
+
+//     if (event.target.getBoundingClientRect().top < divEl.offsetHeight - 5) {
+//       divEl.style.top = `${
+//         event.target.getBoundingClientRect().top + 5 + event.target.offsetHeight
+//       }px `;
+//     }
+//   }
+
+//   if (arrayBut.includes(event.target, 1)) {
+//     const divEl = document.createElement('div');
+//     divEl.classList.add('tooltip');
+//     doc.body.prepend(divEl);
+//     divEl.hidden = true;
+
+//     divEl.hidden = false;
+//     divEl.innerHTML = `${event.target.dataset.tooltip}`;
+
+//     divEl.style.top = `${
+//       event.target.getBoundingClientRect().top - divEl.offsetHeight - 5
+//     }px `;
+
+//     divEl.style.left = `${event.target.getBoundingClientRect().left}px `;
+
+//     if (event.target.getBoundingClientRect().top < divEl.offsetHeight - 5) {
+//       divEl.style.top = `${
+//         event.target.getBoundingClientRect().top + 5 + event.target.offsetHeight
+//       }px `;
+//     }
+//   }
+// }
+
+// function fooOut(event) {
+//   if (arrayBut.includes(event.target, 0)) {
+//     const divEl = doc.body.querySelectorAll('div');
+//     for (let elem of divEl) {
+//       elem.remove();
+//     }
+//   }
+//   if (arrayBut.includes(event.target, 1)) {
+//     const divEl = doc.body.querySelectorAll('div');
+//     for (let elem of divEl) {
+//       elem.remove();
+//     }
+//   }
+// }
+
+
+const contents = document.querySelector('#contents')
+
+// contents.onclick = function(event) {
+
+//   function handleLink(href) {
+//     let isLeaving = confirm(`Leave for ${href}?`);
+//     if (!isLeaving) return false;
+//   }
+
+//   let target = event.target.closest('a');
+
+//   if (target && contents.contains(target)) {
+//     return handleLink(target.getAttribute('href'));
+//   }
+// };
+
+
+// contents.addEventListener('click',foo)
+// function foo(event){
+//   let target = event.target.closest('a')
+//  if(target === null)return
+  
+//   event.preventDefault();
+  
+//   let hreff = target.getAttribute('href')
+  
+//   let ask = confirm(`go to ${hreff} ????`) 
+//   if(ask ===true){
+//     window.location.href = `${hreff}`
+//   } 
+// }
+
+// const contImg = document.querySelector('#thumbs')
+// const mainCont = document.querySelector('#largeImg')
+
+// contImg.addEventListener('click',function(event){
+//   let target = event.target.closest('a')
+//   if (target === null) return;
+//   event.preventDefault();
+//   mainCont.setAttribute('src',target.getAttribute('href'))
+// })
+
+
+
