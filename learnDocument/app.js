@@ -809,8 +809,7 @@ html_leng.lang = 'ru';
 //   }
 // }
 
-
-const contents = document.querySelector('#contents')
+// const contents = document.querySelector('#contents');
 
 // contents.onclick = function(event) {
 
@@ -826,20 +825,19 @@ const contents = document.querySelector('#contents')
 //   }
 // };
 
-
 // contents.addEventListener('click',foo)
 // function foo(event){
 //   let target = event.target.closest('a')
 //  if(target === null)return
-  
+
 //   event.preventDefault();
-  
+
 //   let hreff = target.getAttribute('href')
-  
-//   let ask = confirm(`go to ${hreff} ????`) 
+
+//   let ask = confirm(`go to ${hreff} ????`)
 //   if(ask ===true){
 //     window.location.href = `${hreff}`
-//   } 
+//   }
 // }
 
 // const contImg = document.querySelector('#thumbs')
@@ -851,6 +849,221 @@ const contents = document.querySelector('#contents')
 //   event.preventDefault();
 //   mainCont.setAttribute('src',target.getAttribute('href'))
 // })
+
+// document.addEventListener("hello", function(event) { // (1)
+//   console.log("Привет от " + event.target.tagName); // Привет от H1
+// });
+
+// // ...запуск события на элементе!
+// let event1 = new Event("hello", {bubbles: true}); // (2)
+// elem1.dispatchEvent(event1);
+
+// const container = document.querySelector('ul');
+// container.addEventListener('click', foo);
+// container.onmousedown = function () {
+//   return false;
+// };
+
+// function foo(event) {
+//   let myTarget = event.target.closest('li');
+//   if (myTarget === null) return;
+//   const liNodes = container.querySelectorAll('li');
+
+//   if (event.metaKey || event.ctrlKey) {
+//     myTarget.classList.add('selected');
+//   } else {
+//     for (let elem of liNodes) {
+//       elem.classList.remove('selected');
+//     }
+//     myTarget.classList.add('selected');
+//   }
+// }
+
+// let words = ["hello", "world"]
+
+// function smash (words) {
+//   let str= words.join(' ')
+
+//    return console.log(str)
+// };
+
+// smash(words)
+
+// const house = document.querySelector('#house');
+
+// house.onmouseover = function (event) {
+//   const tooltip = document.createElement('div');
+//   tooltip.classList.add('tooltip');
+//   let mouseTarget = event.target.closest('[data-tooltip]');
+
+//   if (mouseTarget) {
+//     document.body.append(tooltip);
+//     house.append(tooltip);
+//     tooltip.innerHTML = mouseTarget.dataset.tooltip;
+//   }
+
+//   if (
+//     mouseTarget.offsetTop < tooltip.offsetHeight ||
+//     mouseTarget.getBoundingClientRect().top < tooltip.offsetHeight
+//   ) {
+//     tooltip.style.top = `${
+//       mouseTarget.offsetTop +
+//       mouseTarget.offsetHeight +
+//       5 -
+//       document.documentElement.scrollTop
+//     }px`;
+//   } else if (mouseTarget === house && document.documentElement.scrollTop > 0) {
+//     tooltip.style.top = `${
+//       mouseTarget.offsetTop +
+//       mouseTarget.offsetHeight +
+//       5 -
+//       document.documentElement.scrollTop
+//     }px`;
+//   } else {
+//     tooltip.style.top = `${
+//       mouseTarget.offsetTop -
+//       tooltip.offsetHeight -
+//       5 -
+//       document.documentElement.scrollTop
+//     }px`;
+//   }
+
+//   tooltip.style.left = `${
+//     mouseTarget.offsetLeft +
+//     mouseTarget.offsetWidth / 2 -
+//     tooltip.offsetWidth / 2
+//   }px`;
+// };
+
+// house.onmouseout = function (event) {
+//   const tooltipList = document.querySelectorAll('.tooltip');
+//   for (let elem of tooltipList) {
+//     elem.remove();
+//   }
+// };
+
+// Здесь показан набросок класса
+// с возможностями, которые нам понадобятся
+// class HoverIntent {
+
+//   constructor({
+//     sensitivity = 0.1, // скорость ниже 0.1px/ms значит "курсор на элементе"
+//     interval = 100,    // измеряем скорость каждые 100ms
+//     elem,
+//     over,
+//     out
+//   }) {
+//     this.sensitivity = sensitivity;
+//     this.interval = interval;
+//     this.elem = elem;
+//     this.over = over;
+//     this.out = out;
+
+//     // убедитесь, что "this" сохраняет своё значение для обработчиков.
+//     this.onMouseMove = this.onMouseMove.bind(this);
+//     this.onMouseOver = this.onMouseOver.bind(this);
+//     this.onMouseOut = this.onMouseOut.bind(this);
+
+//     // и в функции, измеряющей время (вызываемой из setInterval)
+//     this.trackSpeed = this.trackSpeed.bind(this);
+
+//     elem.addEventListener("mouseover", this.onMouseOver);
+
+//     elem.addEventListener("mouseout", this.onMouseOut);
+
+//   }
+
+//   onMouseOver(event) {
+
+//     if (this.isOverElement) {
+//       // Игнорируем событие над элементом,
+//       // так как мы уже измеряем скорость
+//       return;
+//     }
+
+//     this.isOverElement = true;
+
+//     // после каждого движения измеряем дистанцию
+//     // между предыдущими и текущими координатами курсора
+//     // если скорость меньше sensivity, то она считается медленной
+
+//     this.prevX = event.pageX;
+//     this.prevY = event.pageY;
+//     this.prevTime = Date.now();
+
+//     elem.addEventListener('mousemove', this.onMouseMove);
+//     this.checkSpeedInterval = setInterval(this.trackSpeed, this.interval);
+//   }
+
+//   onMouseOut(event) {
+//     // если ушли с элемента
+//     if (!event.relatedTarget || !elem.contains(event.relatedTarget)) {
+//       this.isOverElement = false;
+//       this.elem.removeEventListener('mousemove', this.onMouseMove);
+//       clearInterval(this.checkSpeedInterval);
+//       if (this.isHover) {
+//         // если была остановка движения на элементе
+//         this.out.call(this.elem, event);
+//         this.isHover = false;
+//       }
+//     }
+//   }
+
+//   onMouseMove(event) {
+//     this.lastX = event.pageX;
+//     this.lastY = event.pageY;
+//     this.lastTime = Date.now();
+//   }
+
+//   trackSpeed() {
+
+//     let speed;
+
+//     if (!this.lastTime || this.lastTime == this.prevTime) {
+//       // курсор не двигался
+//       speed = 0;
+//     } else {
+//       speed = Math.sqrt(
+//         Math.pow(this.prevX - this.lastX, 2) +
+//         Math.pow(this.prevY - this.lastY, 2)
+//       ) / (this.lastTime - this.prevTime);
+//     }
+
+//     if (speed < this.sensitivity) {
+//       clearInterval(this.checkSpeedInterval);
+//       this.isHover = true;
+//       this.over.call(this.elem);
+//     } else {
+//       // скорость высокая, запоминаем новые координаты
+//       this.prevX = this.lastX;
+//       this.prevY = this.lastY;
+//       this.prevTime = this.lastTime;
+//     }
+//   }
+
+//   destroy() {
+//     elem.removeEventListener('mousemove', this.onMouseMove);
+//     elem.removeEventListener('mouseover', this.onMouseOver);
+//     elem.removeEventListener('mouseout', this.onMouseOut);
+//   }
+
+// }
+
+// // для демо
+// setTimeout(function() {
+//   new HoverIntent({
+//     elem,
+//     over() {
+//       tooltip.style.left = elem.getBoundingClientRect().left + 5 + 'px';
+//       tooltip.style.top = elem.getBoundingClientRect().bottom + 5 + 'px';
+//       tooltip.hidden = false;
+//     },
+//     out() {
+//       tooltip.hidden = true;
+//     }
+//   });
+// }, 2000);
+
 
 
 
