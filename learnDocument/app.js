@@ -1064,6 +1064,138 @@ html_leng.lang = 'ru';
 //   });
 // }, 2000);
 
+// const slider = document.querySelector('.slider');
+// const thumb = document.querySelector('.thumb');
 
+// thumb.addEventListener('mousedown', onMouseDown);
 
+// function onMouseDown(event) {
+//   thumb.style.position = 'absolute';
+//   slider.style.position = 'relative';
+//   thumb.style.zIndex = 1000;
+//   slider.append(thumb);
 
+//   function moveAt(pageX) {
+//     thumb.style.left = pageX - thumb.offsetWidth / 2 + 'px';
+
+//     thumb.style.top = slider.offsetHeight / 2 - thumb.offsetHeight / 2 + 'px';
+//     if (pageX < thumb.offsetWidth / 2) {
+//       thumb.style.left = '0px';
+//     }
+//     if (pageX > slider.offsetWidth - thumb.offsetWidth / 2) {
+//       thumb.style.left = slider.offsetWidth - thumb.offsetWidth + 'px';
+//     }
+//   }
+
+//   moveAt(event.pageX - slider.offsetLeft);
+
+//   document.addEventListener('mousemove', onMouseMove);
+//   function onMouseMove(event) {
+//     thumb.style.left =
+//       event.pageX - slider.offsetLeft - thumb.offsetWidth / 2 + 'px';
+
+//     thumb.style.top = slider.offsetHeight / 2 - thumb.offsetHeight / 2 + 'px';
+//     if (event.pageX - slider.offsetLeft < thumb.offsetWidth / 2) {
+//       thumb.style.left = '0px';
+//     }
+//     if (
+//       event.pageX - slider.offsetLeft >
+//       slider.offsetWidth - thumb.offsetWidth / 2
+//     ) {
+//       thumb.style.left = slider.offsetWidth - thumb.offsetWidth + 'px';
+//     }
+//   }
+
+//   document.addEventListener('mouseup', onMouseUp);
+//   function onMouseUp(event) {
+//     document.removeEventListener('mousemove', onMouseMove);
+//   }
+// }
+
+// const allDoc = document.querySelector('html');
+
+// const herosDraggable = document.querySelectorAll('.hero');
+// const ball = document.querySelector('img');
+
+// allDoc.addEventListener('mousedown', onMouseDown);
+
+// let scrollBottom = allDoc.offsetHeight - allDoc.scrollTop - allDoc.clientHeight;
+
+// function onMouseDown(event) {
+//   let heroArr = Array.from(herosDraggable);
+//   let target = event.target;
+//   if (!(heroArr.includes(target, 0) || target === ball)) return;
+//   target.ondragstart = function () {
+//     return false;
+//   };
+
+//   let shiftX = event.clientX - target.getBoundingClientRect().left;
+//   let shiftY = event.clientY - target.getBoundingClientRect().top;
+
+//   moveAt(event.pageX, event.pageY);
+
+//   function moveAt(pageX, pageY) {
+//     target.style.position = 'absolute';
+//     target.style.left = pageX - shiftX + 'px';
+//     target.style.top = pageY - shiftY + 'px';
+
+//     if (target.getBoundingClientRect().left < 0) {
+//       target.style.left = allDoc.scrollLeft + 'px';
+//     }
+
+//     if (target.getBoundingClientRect().top < 0) {
+//       target.style.top = allDoc.scrollTop + 'px';
+//     }
+
+//     if (allDoc.clientHeight < target.getBoundingClientRect().bottom) {
+//       target.style.top =
+//         allDoc.clientHeight - target.offsetHeight + allDoc.scrollTop + 'px';
+//     }
+
+//     if (target.getBoundingClientRect().right > allDoc.clientWidth) {
+//       target.style.left = allDoc.clientWidth - target.offsetWidth + 'px';
+//     }
+//   }
+//   document.addEventListener('mousemove', onMouseMove);
+
+//   function onMouseMove(event) {
+//     moveAt(event.pageX, event.pageY);
+//   }
+
+//   target.onmouseup = function () {
+//     document.removeEventListener('mousemove', onMouseMove);
+
+//   };
+// }
+
+// const rps = (p1, p2) => {
+
+//   switch ((p1)) {
+//     case ('rock'):
+//       switch(p2){
+//         case('scissors'):return 'Player 1 won!';
+//         case('paper'):return 'Player 2 won!';
+//         case('rock'):return 'Draw!';
+//       }
+//     break
+    
+//     case ('paper'):
+//       switch(p2){
+//         case('scissors'):return 'Player 2 won!';
+//         case('paper'):return 'Draw!';
+//         case('rock'):return 'Player 1 won!';
+//       }
+//     break
+      
+//     case ('scissors'):
+//       switch(p2){
+//         case('scissors'):return 'Draw!';
+//         case('paper'):return 'Player 1 won!';
+//         case('rock'):return 'Player 2 won!';
+//       }
+//     break
+//   }
+// };
+
+// console.log(rps('rock', 'paper'))
+// // `Player ${n} won!`
