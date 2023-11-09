@@ -1178,7 +1178,7 @@ html_leng.lang = 'ru';
 //         case('rock'):return 'Draw!';
 //       }
 //     break
-    
+
 //     case ('paper'):
 //       switch(p2){
 //         case('scissors'):return 'Player 2 won!';
@@ -1186,7 +1186,7 @@ html_leng.lang = 'ru';
 //         case('rock'):return 'Player 1 won!';
 //       }
 //     break
-      
+
 //     case ('scissors'):
 //       switch(p2){
 //         case('scissors'):return 'Draw!';
@@ -1199,3 +1199,118 @@ html_leng.lang = 'ru';
 
 // console.log(rps('rock', 'paper'))
 // // `Player ${n} won!`
+
+// function runOnKeys(func, ...code) {
+
+//   let arrUserCode = [];
+
+//   document.addEventListener('keydown', function (event) {
+
+//     arrUserCode.push(event.code);
+//     let arr = [...code];
+//     document.onkeyup = function (event) {
+//       arrUserCode.splice(0, arrUserCode.length);
+//     };
+
+//     if (arr.length === arrUserCode.length) {
+//       let move = 0;
+//       for (let i = 0; i < arr.length; i++) {
+//         if (arrUserCode.includes(arr[i])) {
+//           move++;
+//         }
+//       }
+
+//       if (move === arrUserCode.length) {
+//         if (
+//           arr.length === arrUserCode.length ||
+//           arrUserCode.length > arr.length
+//         ) {
+//           arrUserCode.splice(0, arrUserCode.length);
+//         }
+//         return func();
+//       }
+//     }
+
+//     if (arr.length === arrUserCode.length || arrUserCode.length > arr.length) {
+//       arrUserCode.splice(0, arrUserCode.length);
+//     }
+//   });
+// }
+
+// runOnKeys(() => console.log('Привет!'), 'KeyQ', 'KeyW');
+
+// window.addEventListener('scroll', up)
+
+// function up(){
+//     while (document.documentElement.getBoundingClientRect().bottom < document.documentElement.clientHeight+100) {
+//     const elem = document.createElement('div')
+//     elem.innerHTML = new Date()
+//     document.body.append(elem)
+//   }
+// };
+
+// up()
+
+// const div = document.querySelector('#arrowTop')
+// window.addEventListener('scroll',scroll)
+// window.addEventListener('click',clickB)
+// function scroll(){
+// let winHeight = document.documentElement.clientHeight
+// let nowScrollTop = document.documentElement.scrollTop
+// if(nowScrollTop > winHeight){
+//   div.hidden = false
+//  } else{
+//   div.hidden = true
+// }
+// }
+// function clickB(event){
+// if (event.target===div){
+//   document.documentElement.scrollTop =0
+// }
+// }
+
+// /**
+//  * Проверка видимости элемента (в видимой части страницы)
+//  * Достаточно, чтобы верхний или нижний край элемента был виден
+//  */
+// function isVisible(elem) {
+//   // console.log(elem.getBoundingClientRect().top)
+//   // console.log('')
+//   // console.log((document.documentElement.getBoundingClientRect().top)*-1)
+
+//   if (
+//     document.documentElement.clientHeight +
+//       document.documentElement.getBoundingClientRect().top * -1 >
+//     elem.getBoundingClientRect().top
+//   ) {
+//     console.log(1);
+//     return true;
+//   } else return false;
+//   // return true
+
+//   // ...ваш код...
+// }
+
+// function showVisible() {
+//   for (let img of document.querySelectorAll('img')) {
+//     let realSrc = img.dataset.src;
+//     if (!realSrc) continue;
+
+//     if (isVisible(img)) {
+//       // отключение кеширования
+//       // эта строка должна быть удалена в "боевом" коде
+//       realSrc += '?nocache=' + Math.random();
+
+//       img.src = realSrc;
+
+//       img.dataset.src = '';
+//     }
+//   }
+// }
+
+// window.addEventListener('scroll', showVisible);
+// showVisible();
+
+
+
+
