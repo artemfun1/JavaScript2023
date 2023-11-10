@@ -1,6 +1,6 @@
 'use strict';
-const html_leng = document.documentElement;
-html_leng.lang = 'ru';
+// const html_leng = document.documentElement;
+// html_leng.lang = 'ru';
 
 // console.log(document.body.children[5])
 // console.log(document.body.children[6])
@@ -1312,5 +1312,13 @@ html_leng.lang = 'ru';
 // showVisible();
 
 
+// const select = document.querySelector('#genres')
 
 
+//   select.innerHTML += '<option value="classic">Классика</option>'
+
+//     console.log( select.value = 'classic')
+
+
+
+console.log(1)
