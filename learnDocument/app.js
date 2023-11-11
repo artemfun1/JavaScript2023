@@ -1,6 +1,6 @@
 'use strict';
-// const html_leng = document.documentElement;
-// html_leng.lang = 'ru';
+const html_leng = document.documentElement;
+html_leng.lang = 'ru';
 
 // console.log(document.body.children[5])
 // console.log(document.body.children[6])
@@ -1310,15 +1310,254 @@
 
 // window.addEventListener('scroll', showVisible);
 // showVisible();
-
-
 // const select = document.querySelector('#genres')
-
 
 //   select.innerHTML += '<option value="classic">Классика</option>'
 
 //     console.log( select.value = 'classic')
 
+// ...ваш код...
+// Заметьте: <textarea> должен иметь class="edit"
+// my.css содержит стиль, чтобы <textarea> и <div> были одного размера
 
+// const div = document.querySelector('#view');
 
-console.log(1)
+// div.onclick = function () {
+//   let textDiv = div.innerHTML;
+
+//   const tetxarea = document.createElement('textarea');
+//   tetxarea.classList.add('edit');
+//   tetxarea.innerHTML = textDiv;
+//   div.replaceWith(tetxarea);
+//   tetxarea.focus();
+
+//   tetxarea.addEventListener('blur', onBlur);
+//   tetxarea.addEventListener('keydown', foo);
+//   function foo(event) {
+//     if (event.code === 'Enter') {
+//       onBlur();
+//     } else {
+//       return;
+//     }
+//   }
+
+//   function onBlur() {
+//     div.innerHTML = tetxarea.value;
+//     tetxarea.removeEventListener('keydown', foo);
+//     tetxarea.removeEventListener('onblur', onBlur);
+//     tetxarea.blur();
+//     tetxarea.replaceWith(div);
+//     tetxarea.remove();
+//   }
+// };
+
+// document.querySelector('#bagua-table').addEventListener('dblclick', onDblclick);
+
+// let activeEl = document.activeElement;
+
+// function onDblclick(event) {
+//   const target = event.target.closest('td');
+//   if (!target) return;
+//   if (activeEl.tagName === 'TEXTAREA') {
+//     const textarea = document.querySelector('.textarea');
+//     const lValue = document.querySelector('.cont');
+//       if (event.target.textContent === 'OK') {
+//         target.innerHTML = textarea.value;
+//         textarea.remove();
+//         lValue.remove();
+//         activeEl = '';
+
+//         return;
+//       }
+//       if (event.target.textContent === 'ОТМЕНА') {
+//         target.innerHTML = lValue.textContent;
+//         textarea.remove();
+//         lValue.remove();
+//         activeEl = '';
+
+//         return;
+//       }
+
+//   }
+
+//   const cont = document.createElement('div');
+//   cont.classList.add('cont');
+//   cont.hidden = true;
+//   document.body.append(cont);
+//   cont.textContent = target.innerHTML;
+
+//   const textarea = document.createElement('textarea');
+//   textarea.classList.add('textarea');
+
+//   textarea.innerHTML = target.innerHTML;
+//   target.innerHTML = '';
+//   target.style.padding = '0px';
+//   target.style.border = '0px';
+//   target.append(textarea);
+
+//   textarea.style.cssText = `
+//     width: ${target.getBoundingClientRect().width}px;
+//     height: ${target.getBoundingClientRect().height}px;
+
+//     border: none;
+//     margin: 0;
+//     padding: 0;
+//     display: block;
+//     resize: none;
+//     outline: none;
+//     overflow: auto;
+// `;
+
+//   const btnOk = document.createElement('button');
+//   const btnCancel = document.createElement('button');
+
+//   btnOk.textContent = 'OK';
+//   btnOk.style.position = 'absolute';
+//   target.append(btnOk);
+//   btnOk.style.left = `${target.getBoundingClientRect().left}px`;
+
+//   btnCancel.textContent = 'ОТМЕНА';
+//   btnCancel.style.position = 'absolute';
+//   target.append(btnCancel);
+//   btnCancel.style.left = `${
+//     target.getBoundingClientRect().left + btnOk.getBoundingClientRect().width
+//   }px`;
+
+//   textarea.addEventListener('focus', onFocus);
+//   function onFocus() {
+//     activeEl = document.activeElement;
+//   }
+//   textarea.focus();
+// }
+
+// let mouse = document.querySelector('#mouse');
+// mouse.setAttribute('tabindex', '1');
+// mouse.style.cssText = `
+
+//     cursor: pointer;
+//     display: inline-block;
+//     position: fixed;
+//   `
+// mouse.onfocus = function () {
+//   mouse.style.cssText += `
+
+//     outline: 1px dashed black;
+//   `
+//   mouse.onkeydown = function (event) {
+//     event.preventDefault();
+//     console.log(event.code);
+//     if (event.code === 'ArrowUp') {
+//       mouse.style.top = `${
+//         mouse.getBoundingClientRect().top - mouse.getBoundingClientRect().height
+//       }px`;
+//     } else if (event.code === 'ArrowDown') {
+//       mouse.style.top = `${
+//         mouse.getBoundingClientRect().top + mouse.getBoundingClientRect().height
+//       }px`;
+//     } else if (event.code === 'ArrowLeft') {
+//       mouse.style.left = `${
+//         mouse.getBoundingClientRect().left - mouse.getBoundingClientRect().width
+//       }px`;
+//     } else if (event.code === 'ArrowRight') {
+//       mouse.style.left = `${
+//         mouse.getBoundingClientRect().left + mouse.getBoundingClientRect().width
+//       }px`;
+//     }
+//   };
+//   mouse.onblur =function(){
+//     mouse.style.cssText = `
+//     cursor: pointer;
+//     display: inline-block;
+//     position: fixed;
+//   `
+//   }
+// };
+
+// const form = document.forms.calculator;
+
+// const money = document.getElementsByName('money')[0]
+// const months = document.getElementsByName('months')[0]
+// const interest = document.getElementsByName('interest')[0]
+// const moneyBefore = document.querySelector('#money-before')
+// const moneyAfter = document.querySelector('#money-after')
+// const heightAfter = document.querySelector('#height-after')
+// const heightBefore = document.querySelector('#height-before')
+
+// money.addEventListener('input', calc)
+// months.addEventListener('input', calc)
+// interest.addEventListener('input', calc)
+
+// calc()
+// function calc(){
+//   moneyBefore.textContent = money.value
+//   const result = Math.round(money.value * (1 + (interest.value/100)) ** (months.value/12));
+
+//   moneyAfter.textContent = result
+
+// heightAfter.style.height = (heightBefore.getBoundingClientRect().height * (moneyAfter.textContent/moneyBefore.textContent)) +'px'
+
+// }
+
+// function showConsole(html, callback) {
+//   const divCover = document.querySelector('#cover-div');
+//   const divForm = document.querySelector('#prompt-form-container');
+//   const showButton = document.querySelector('#show-button');
+//   const message = document.querySelector('#prompt-message');
+//   const inputText = document.getElementsByName('text')[0];
+//   const form = document.forms[0];
+
+//   showButton.onclick = function () {
+//     divForm.hidden = false;
+//     divCover.hidden = false;
+//     inputText.focus();
+//   };
+
+//   divForm.hidden = false;
+//   divCover.hidden = false;
+//   inputText.focus();
+
+//   divCover.style.background = 'black';
+//   divCover.style.opacity = '0.5';
+//   message.innerHTML = html;
+
+//   form.onkeydown = function (event) {
+//     if (event.code === 'Escape') {
+//       divCover.hidden = true;
+//       divForm.hidden = true;
+//       callback(null);
+//     }
+//     if (event.code === 'Tab') {
+//       event.preventDefault();
+//       for (let i = 0; i < form.elements.length; i++) {
+//         if (form.elements[i] === document.activeElement) {
+//           form.elements[i].blur();
+//           if (i === 2) {
+//             form.elements[0].focus();
+//             console.log(1);
+//           } else {
+//             form.elements[i + 1].focus();
+//             console.log(2);
+//           }
+//           break;
+//         }
+//       }
+//     }
+//   };
+
+//   form.elements[1].onclick = function () {
+//     event.preventDefault();
+//     divCover.hidden = true;
+//     divForm.hidden = true;
+//     callback(inputText.value);
+//     inputText.value =''
+//   };
+//   form.elements[2].onclick = function () {
+//     divCover.hidden = true;
+//     divForm.hidden = true;
+//     callback(null);
+//   };
+// }
+
+// showConsole('Введите что-нибудь<br>...умное :)', function (value) {
+//   console.log(value);
+// });
