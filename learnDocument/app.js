@@ -1561,3 +1561,141 @@ html_leng.lang = 'ru';
 // showConsole('Введите что-нибудь<br>...умное :)', function (value) {
 //   console.log(value);
 // });
+
+// function preloadImages(sources, callback) {
+//   let counter = 0;
+
+//   function onLoad() {
+//     counter++;
+//     if (counter == sources.length) callback();
+//   }
+
+//   for (let source of sources) {
+//     let img = document.createElement('img');
+//     img.src = source;
+//     img.onload = img.onerror = onLoad;
+//   }
+// }
+
+// // ---------- тест ----------
+
+// let sources = [
+//   'https://en.js.cx/images-load/1.jpg',
+//   'https://en.js.cx/images-load/2.jpg',
+//   'https://en.js.cx/images-load/3.jpg',
+// ];
+
+// // добавляем случайные символы к ссылкам, чтобы избежать кеширования
+// for (let i = 0; i < sources.length; i++) {
+//   sources[i] += '?' + Math.random();
+// }
+
+// // для каждого изображения
+// // создадим другое изображение с аналогичным src и проверим, есть ли у нас его ширина
+// function testLoaded() {
+//   let widthSum = 0;
+//   for (let i = 0; i < sources.length; i++) {
+//     let img = document.createElement('img');
+//     img.src = sources[i];
+//     widthSum += img.width;
+//   }
+//   console.log(widthSum);
+// }
+
+// // каждое изображение в разрешении 100x100, итоговая сумма их ширин должна быть 300
+// preloadImages(sources, testLoaded);
+
+// let a = {a:1}
+// function ab(){
+//   console.log(this)
+// }
+
+// ab.apply(a)
+
+// function loadScript(src) {
+//   const script = document.createElement('script');
+//   script.src = src;
+
+//   document.head.append(script);
+//   script.onload = function(){
+//     test()
+//   };
+// }
+
+// loadScript('test.js')
+
+// function foo(){
+//   test()
+// }
+
+// let promise = new Promise(function (resolve,reject){
+//   const script = document.createElement('script');
+//     script.src = 'tesft.js';
+    
+
+//     script.onload = () => resolve(test())
+//     script.onerror = () => reject(new Error('oshibka'))
+//    document.head.append(script);
+
+// })
+
+// promise
+// .then()
+// .catch((e) => console.log(e.message))
+// // .finally(console.log('vse'))
+
+// function delay(ms) {
+//   return new Promise(function(resolve,reject){
+
+//     setTimeout(() => resolve(),ms)
+
+//   })
+// }
+
+// delay(1000).then(() => console.log('выполнилось через 3 секунды'));
+
+
+// new Promise(function(resolve, reject) {
+
+//   setTimeout(() => resolve(1), 1000); // (*)
+
+// }).then(function(result) { // (**)
+
+//   console.log(result); // 1
+//   return new Promise((resolve, reject) => { // (*)
+//     setTimeout(() => resolve(result * 2), 1000);
+//   });
+
+// }).then(function(result) { // (***)
+
+//   console.log(result); // 2
+//   return new Promise((resolve, reject) => { // (*)
+//     setTimeout(() => resolve(result * 2), 1000);
+//   });
+
+// }).then(function(result) {
+
+//   console.log(result); // 4
+//   return new Promise((resolve, reject) => { // (*)
+//     setTimeout(() => resolve(result * 2), 1000);
+//   });
+
+// }).finally(console.log('vse'))
+
+
+
+// new Promise(function() {
+//   noSuchFunction(); // Ошибка (нет такой функции)
+// })
+//   .then(() => {
+//     // обработчики .then, один или более
+//   }); // без .catch в самом конце!
+
+
+// console.log(4*4*4)
+
+
+
+// fgfr
+// WebGLProgramtgtgt
+// tgtg
