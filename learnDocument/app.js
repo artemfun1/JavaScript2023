@@ -1631,7 +1631,6 @@ html_leng.lang = 'ru';
 // let promise = new Promise(function (resolve,reject){
 //   const script = document.createElement('script');
 //     script.src = 'tesft.js';
-    
 
 //     script.onload = () => resolve(test())
 //     script.onerror = () => reject(new Error('oshibka'))
@@ -1653,7 +1652,6 @@ html_leng.lang = 'ru';
 // }
 
 // delay(1000).then(() => console.log('выполнилось через 3 секунды'));
-
 
 // new Promise(function(resolve, reject) {
 
@@ -1682,8 +1680,6 @@ html_leng.lang = 'ru';
 
 // }).finally(console.log('vse'))
 
-
-
 // new Promise(function() {
 //   noSuchFunction(); // Ошибка (нет такой функции)
 // })
@@ -1691,11 +1687,196 @@ html_leng.lang = 'ru';
 //     // обработчики .then, один или более
 //   }); // без .catch в самом конце!
 
+// async function testF(){
+//   let response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+//   console.log(response)
+// }
 
-// console.log(4*4*4)
+// testF()
+
+// async function loadJson(url) {
+//        let response = await fetch(url)
+//       if (response.status == 200) {
+//         let json = await response.json()
+//         return console.log(response.json())
+//       }
+//       throw new Error(response.status);
+
+// }
+// // 'https://jsonplaceholder.typicode.com/todos/1'
+
+// loadJson('no-such-user.json').catch(console.log)
+
+//  // Error: 404
+
+// class HttpError extends Error {
+//   constructor(response) {
+//     super(`${response.status} for ${response.url}`);
+//     this.name = 'HttpError';
+//     this.response = response;
+//   }
+// }
+
+// async function loadJson(url) {
+//   let response = await fetch(url)
+//       if (response.status == 200) {
+//         let json = await response.json();
+//        return json
+//       } else {
+//         let err =  new HttpError(response);
+//         return err
+//       }
+
+// }
+
+// // Запрашивать логин, пока github не вернёт существующего пользователя.
+// async function demoGithubUser() {
+//   let name = prompt("Введите логин?", "iliakan");
+
+//   let myJson = await loadJson(`https://api.github.com/users/${name}`)
+
+//   if(myJson.login === name){
+//     alert(`Полное имя: ${myJson.name}.`);
+//   } else {
+//     if (myJson instanceof HttpError && myJson.response.status == 404) {
+//         alert("Такого пользователя не существует, пожалуйста, повторите ввод.");
+//         return demoGithubUser();
+//       } else {
+//         throw err;
+//       }
+//   }
+
+// }
+
+// demoGithubUser();
+
+// async function wait() {
+//   await new Promise(resolve => setTimeout(resolve, 1000));
+
+//   return 10
+// }
+
+// function f() {
+
+//   wait().then(console.log)
+
+//   // ...что здесь написать?
+//   // чтобы вызвать wait() и дождаться результата "10" от async–функции
+//   // не забывайте, здесь нельзя использовать "await"
+// }
+
+// f()
+
+// console.log('a');
+// new Promise((resolve, reject) => {
+// 	console.log('b');
+// 	setTimeout(() => {
+// 		console.log('c');
+// 		resolve();
+// 	}, 0);
+// })
+//   .then(() => console.log('d'));
+
+// console.log('e');
+// setTimeout(() => console.log('f'), 0);
+// console.log('g');
+
+// Напишите код, который получает список задач по URL https://jsonplaceholder.typicode.com/todos и выводит их в виде списка (<ul>) на страницу.
+
+// Примечание. Сетевые запросы можно выполнять с помощью функции fetch(), работающей на основе Promise API.
+
+// async function render(){
+//   let response = await fetch('https://jsonplaceholder.typicode.com/todos')
+//   let json = await response.json()
+
+// for (let item of json){
+//   let ul = document.createElement('ul')
+//   ul.textContent = item.title
+//   document.body.append(ul)
+// }
+
+// }
+
+// render()
+// fetch('https://jsonplaceholder.typicode.com/todos')
+// .then((response) => {
+// let json = response.json()
+// return json
+// }).then((json)=>{
+//   for (let item of json){
+//       let ul = document.createElement('ul')
+//       ul.textContent = item.title
+//       document.body.append(ul)
+//   }
+// })
+
+// fetch('https://jsonplaceholder.typicode.com/todos')
+//   .then((response) => {
+
+// return response.text()
+
+// }).then((jsonText)=>{
+
+//   let json = JSON.parse(jsonText)
+
+//   for (let item of json){
+//       let ul = document.createElement('ul')
+//       ul.textContent = item.title
+//       document.body.append(ul)
+//   }
+// })
+
+// Напишите функцию sumWithDelay(), которая принимает delay, a, b и возвращает a + b через delay миллисекунд. Функция должна работать на основе Promise API.
+
+// function sumWithDelay(delay, a, b) {
+
+// return new Promise((resolve,reject) => {
+//    setTimeout(resolve(a+b), delay)
+// });
+
+// }
+
+// async function start() {
+//   const result = await sumWithDelay(1000, 5, 5);
+//   console.log(result);
+// }
+
+// start();
+
+// Напишите функцию, имитирующую запрос к серверу за получением пользователя. Она принимает id и с задержкой 2500 миллисекунд возвращает пользователя из массива USERS с соответствующим id. В случае отсутствия пользователя сгенерировать обработать исключение.
+
+// const USERS = [
+//   { id: '001', name: 'Алексей', age: 25 },
+//   { id: '002', name: 'Иван', age: 28 },
+//   { id: '003', name: 'Егор', age: 30 },
+// ];
+
+// function fetchUser(id) {
+//   // Ваш код здесь...
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       for (let i = 0; i < USERS.length; i++) {
+//         if (USERS[i].id === id) {
+//           return resolve(USERS[i]);
+//         }
+//         if (i === USERS.length - 1) {
+//           return resolve(`пользователя с id: ${id} нет`)
+//         }
+//       }
+//     }, 2500);
+//   });
+// }
+
+// async function start() {
+//   // ...
+//     const result = await fetchUser('003');
+// console.log(result);
+
+//    // { id: '001', name: "Алексей", age: 25 }
+//   // ...
+// }
+
+// start();
 
 
 
-// fgfr
-// WebGLProgramtgtgt
-// tgtg
