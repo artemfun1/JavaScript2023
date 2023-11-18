@@ -1630,7 +1630,7 @@ html_leng.lang = 'ru';
 
 // let promise = new Promise(function (resolve,reject){
 //   const script = document.createElement('script');
-//     script.src = 'tesft.js';
+//     script.src = 'test.js';
 
 //     script.onload = () => resolve(test())
 //     script.onerror = () => reject(new Error('oshibka'))
@@ -1641,7 +1641,7 @@ html_leng.lang = 'ru';
 // promise
 // .then()
 // .catch((e) => console.log(e.message))
-// // .finally(console.log('vse'))
+// .finally(console.log('vse'))
 
 // function delay(ms) {
 //   return new Promise(function(resolve,reject){
@@ -1878,5 +1878,245 @@ html_leng.lang = 'ru';
 
 // start();
 
+// function* generateSequence() {
+//   console.log('one')
+
+//   yield 1;
+//   console.log('two')
+//   yield 2;
+//   console.log('three')
+//   return 3;
+// }
+
+// let generator = generateSequence();
+// console.log(generator.next());
+// console.log(generator.next())
+// console.log(generator.next())
+
+// function* gen() {
+//   // Передаём вопрос во внешний код и ожидаем ответа
+//   let result = yield ; // (*)
+
+//   console.log(result);
+// }
+
+// let generator = gen();
+
+// let question = generator.next().value
+// generator.next(4);
+
+// console.log(question)
+
+// function* pseudoRandom(previous){
+
+//   while (true) {
+//     let next = previous * 16807 % 2147483647;
+//     previous = next;
+//     yield next;
+//   }
+
+// }
+
+// let generator = pseudoRandom(1);
+
+// console.log(generator.next().value); // 16807
+// console.log(generator.next().value); // 282475249
+// console.log(generator.next().value); // 1622650073
+
+// import test from './test.js';
+
+// test()
+
+// async function load() {
+//   let test = await import('./test.js');
+//   test.test(); // test
+
+// }
+// load()
+
+// import './test.js'
+
+// import {test} from './test.js'
+
+// test()
+
+// let numbers = [];
+// numbers = new Proxy(numbers, {
+//   set(target, prop, val) {
+//     if (typeof val == 'number') {
+//       console.log(target);
+//       console.log(prop);
+//       console.log(val);
+
+//       target[prop] = val;
+
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   },
+// });
+
+// numbers.push(1000); 
+// numbers.push(2000);
+
+// console.log(numbers[0])
+
+// let user = {
+//   name: "John",
+
+// };
+
+// function wrap(target) {
+//   return new Proxy(target, {
+//     get(target, prop, receiver) {
+//       let value = Reflect.get(...arguments);
+//       if (value){
+//         return value}
+//         else{ return new Error('Ошибка: такого свойства не существует')}
+//     }
+//   });
+// }
+
+// user = wrap(user);
+
+// console.log(user.name); // John
+// console.log(user.age); // Ошибка: такого свойства не существует
+
+// let array = [1, 2, 3];
+
+// array = new Proxy(array, {
+//   get(target, prop) {
+//     let value = target[+prop + target.length];
+//     if (value) {
+//       return value;
+//     } else {
+//       throw new Error('Ошибка: такого свойства не существует');
+//     }
+//   },
+// });
+// // array.length - N
+// console.log(array[-1]); // 3
+// console.log(array[-2]); // 2
+
+// function makeObservable(target) {
+
+// target.observe = function(key, value) {
+//   console.log(`SET ${key}=${value}`);
+// }
+//   return new Proxy(target, {
+//     set(target, prop, val) {
+//       // для перехвата записи свойства
+//       if (val) {
+//         target.observe(prop, val);
+//         target[prop] = val;
+//         return true;
+//       } else {
+//         return false;
+//       }
+//     },
+//   });
+// }
+
+// let user = {
+// };
+
+// user = makeObservable(user);
+
+// user.name = 'John'; // выводит: SET name=John
+
+// let obj = {
+//   name:'Masha'
+// }
+
+// console.log('name' in obj)
 
 
+// const withDefaultValue = (target, defaultValue = 0) => {
+// return new Proxy(target, {
+//   get: (obj,prop) => 
+//     (prop in obj? obj[prop]:
+//     defaultValue)
+// })
+// }
+
+// const position = withDefaultValue({
+//   x:24,
+//   y:42
+// },0)
+
+
+// const withHiddenProps = (target,prefix = '_')=>{
+//   return new Proxy(target,{
+//     has: (obj,prop)=>(prop in obj)&&(!prop.startsWith(prefix)),
+//     ownKeys: obj => Reflect.ownKeys(obj).filter(p=>!p.startsWith(prefix)),
+//     get: (obj,prop,receiver)=>(prop in receiver? obj[prop]:void 0)
+//   })
+// }
+
+// const data = withHiddenProps({
+//   name:'Maxim',
+//   age:25,
+//   _uid: '1222'
+// })
+
+// const IndexArray = new Proxy(Array, {
+//   construct(target,[args]){
+//     const index={}
+//     args.forEach(element => {
+//       index[element.id] = element
+//     });
+//     return new Proxy(new target(...args),{
+//       get(arr,prop){
+// switch(prop){
+//   case 'push': 
+//   return item=>{
+//     index[item.id]=item
+//     arr[prop].call(arr,item)
+//   }
+//   case 'findById':
+//     return id =>index[id]
+
+//   default: return arr[prop]
+// }
+//       }
+//     })
+
+//   }
+// })
+
+// const users = new IndexArray( [{id:11, name: 'Maxim', job: 'Front', age:24},
+// {id:22, name: 'Victor', job: 'Back', age:28},
+// {id:33, name: 'Elena', job: 'Student', age:22}])
+
+
+// let user = {
+//   name: "John",
+//   hi() { alert(this.name); }
+// };
+
+// // разделим получение метода объекта и его вызов в разных строках
+// let hi = user.hi
+// hi.call(user)
+
+// let user = {
+//   name: "John",
+//   go: function() { console.log(this.name) }
+// }
+
+// (user.go)() // ошибка!
+
+// let obj, method;
+
+// obj = {
+//   go: function() {console.log(this); }
+// };
+
+// obj.go();               // (1) [object Object]
+
+// (obj.go)();             // (2) [object Object]
+
+// (method = obj.go)();    // (3) undefined
+
+// (obj.go || obj.stop)(); 
+console.log( 'S\u0307' )

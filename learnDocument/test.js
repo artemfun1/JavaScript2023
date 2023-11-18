@@ -1,4 +1,7 @@
-'use strict'
+// 'use strict'
 
 
-function test(){console.log("test")}
+//  function test(){console.log("test")}
+
+
+//  test()
