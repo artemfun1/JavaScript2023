@@ -1957,7 +1957,7 @@ html_leng.lang = 'ru';
 //   },
 // });
 
-// numbers.push(1000); 
+// numbers.push(1000);
 // numbers.push(2000);
 
 // console.log(numbers[0])
@@ -2031,10 +2031,9 @@ html_leng.lang = 'ru';
 
 // console.log('name' in obj)
 
-
 // const withDefaultValue = (target, defaultValue = 0) => {
 // return new Proxy(target, {
-//   get: (obj,prop) => 
+//   get: (obj,prop) =>
 //     (prop in obj? obj[prop]:
 //     defaultValue)
 // })
@@ -2044,7 +2043,6 @@ html_leng.lang = 'ru';
 //   x:24,
 //   y:42
 // },0)
-
 
 // const withHiddenProps = (target,prefix = '_')=>{
 //   return new Proxy(target,{
@@ -2069,7 +2067,7 @@ html_leng.lang = 'ru';
 //     return new Proxy(new target(...args),{
 //       get(arr,prop){
 // switch(prop){
-//   case 'push': 
+//   case 'push':
 //   return item=>{
 //     index[item.id]=item
 //     arr[prop].call(arr,item)
@@ -2088,7 +2086,6 @@ html_leng.lang = 'ru';
 // const users = new IndexArray( [{id:11, name: 'Maxim', job: 'Front', age:24},
 // {id:22, name: 'Victor', job: 'Back', age:28},
 // {id:33, name: 'Elena', job: 'Student', age:22}])
-
 
 // let user = {
 //   name: "John",
@@ -2118,5 +2115,109 @@ html_leng.lang = 'ru';
 
 // (method = obj.go)();    // (3) undefined
 
-// (obj.go || obj.stop)(); 
-console.log( 'S\u0307' )
+// (obj.go || obj.stop)();
+// console.log( 'S\u0307' )
+
+// window.open('https://javascript.info/')
+
+// function isIsogram(str) {
+//   for (let elem of [...str.toLowerCase()]) {
+//     if ([...str.toLowerCase()].filter((item) => item === elem).length > 1) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isIsogram('Dermatoglyphics'));
+
+// window.onclick = () => {
+//   window.open('https://javascript.info');
+// };
+
+// let buffer = new ArrayBuffer(166); // создаётся буфер длиной 16 байт
+// alert(buffer.byteLength); // 16
+
+// function makeWorker() {
+//   name = "Pete";
+
+//   return function() {
+//     console.log(name);
+//   };
+// }
+
+// let name = "John";
+
+// // создаём функцию
+// let work = makeWorker();
+
+// // вызываем её
+// work(); // что будет показано?
+
+// function sum(a){
+
+//   return function(b){
+//      console.log(a+b)
+//   }
+// }
+
+// sum(1)(2) //3
+// sum(5)(-1) // 4
+
+// let x = 1;
+
+// function func() {
+//   console.log(x); // ReferenceError: Cannot access 'x' before initialization
+//   let x = 2;
+// }
+
+// func();
+
+// function calc (a){
+
+// return function(b){
+//   console.log(a+b)
+// }
+// }
+
+// let func = calc(10)
+
+// func(1)
+
+// function logPerson() {
+//   console.log(`Person: ${this.name}`);
+// }
+
+// const person1 = { name: 'Maxim' };
+// const person2 = { name: 'Masha' };
+
+// // function concat()
+
+// function bind(person, log) {
+//   log.apply(person)
+// }
+
+// bind(person1, logPerson);
+// bind(person2, logPerson);
+
+// const response =  fetch('https://jsonplaceholder.typicode.com/users')
+// .then(response=>response.body)
+// .then(data=>console.log(data))
+
+async function getUsers(names) {
+  let users = [];
+
+  for (let people of names) {
+    
+      let response = await fetch(`https://api.github.com/users/${people}`);
+      console.log(response.ok)
+
+      let user = await response.json();
+      users.push(user);
+   
+  }
+
+  console.log(users);
+}
+
+getUsers(['iliakan', 'remy', 'no.such.users']);
