@@ -1,6 +1,9 @@
 'use strict';
 const html_leng = document.documentElement;
 html_leng.lang = 'ru';
+function cl(value) {
+  console.log(value);
+}
 
 // console.log(document.body.children[5])
 // console.log(document.body.children[6])
@@ -12,7 +15,7 @@ html_leng.lang = 'ru';
 
 // console.dir(document.body.dataset)
 
-// console.log(elem.textContent)
+// console.log(elem.value)
 
 // let result = prompt();
 
@@ -26,7 +29,7 @@ html_leng.lang = 'ru';
 
 //   if (!value) break; // (*)
 //   let li = document.createElement('li')
-//   li.textContent = value
+//   li.value = value
 //   ul.append(li)
 
 // }
@@ -109,11 +112,11 @@ html_leng.lang = 'ru';
 //     for (let key in data) {
 //       let li = document.createElement('li');
 //       if (li.parentNode === ul) {
-//         li.textContent = key;
+//         li.value = key;
 //         ul.append(li);
 //       } else {
 //         elem.append(ul);
-//         li.textContent = key;
+//         li.value = key;
 //         ul.append(li);
 //       }
 //     }
@@ -124,11 +127,11 @@ html_leng.lang = 'ru';
 //     for (let key in data) {
 //       let li = document.createElement('li');
 //       if (li.parentNode === ul) {
-//         li.textContent = key;
+//         li.value = key;
 //         ul.append(li);
 //       } else {
 //         elem.append(ul);
-//         li.textContent = key;
+//         li.value = key;
 //         ul.append(li);
 //       }
 //     }
@@ -196,7 +199,7 @@ html_leng.lang = 'ru';
 //   div.classList.add(options.className)
 //   div.classList.add('notification')
 
-//   div.textContent = options.html
+//   div.value = options.html
 //   div.style.top = `${options.top}px`
 //   div.style.right = `${options.right}px`
 
@@ -233,7 +236,7 @@ html_leng.lang = 'ru';
 // div.style.width = '50px';
 // div.style.height = '50px';
 // div.style.background = 'red'
-// div.textContent = 'fjfjf/n mff/n mfmf'
+// div.value = 'fjfjf/n mff/n mfmf'
 // div.style.overflow = 'auto'
 
 // document.body.append(div);
@@ -723,7 +726,7 @@ html_leng.lang = 'ru';
 
 //   for(let j=0;j<elemRow.length+1;j++){
 //     for(let i =0; i<elemRow.length-1;i++){
-//       if(+elemRow[i].cells[index].textContent > +elemRow[i+1].cells[0].textContent){
+//       if(+elemRow[i].cells[index].value > +elemRow[i+1].cells[0].value){
 //         tbody.append(elemRow[i])
 //       }
 //       }
@@ -733,7 +736,7 @@ html_leng.lang = 'ru';
 // function sortName(index) {
 //   for(let j=0;j<elemRow.length+1;j++){
 //     for(let i =0; i<elemRow.length-1;i++){
-//       if(elemRow[i].cells[index].textContent > elemRow[i+1].cells[1].textContent){
+//       if(elemRow[i].cells[index].value > elemRow[i+1].cells[1].value){
 //         tbody.append(elemRow[i])
 //       }
 //       }
@@ -1361,7 +1364,7 @@ html_leng.lang = 'ru';
 //   if (activeEl.tagName === 'TEXTAREA') {
 //     const textarea = document.querySelector('.textarea');
 //     const lValue = document.querySelector('.cont');
-//       if (event.target.textContent === 'OK') {
+//       if (event.target.value === 'OK') {
 //         target.innerHTML = textarea.value;
 //         textarea.remove();
 //         lValue.remove();
@@ -1369,8 +1372,8 @@ html_leng.lang = 'ru';
 
 //         return;
 //       }
-//       if (event.target.textContent === 'ОТМЕНА') {
-//         target.innerHTML = lValue.textContent;
+//       if (event.target.value === 'ОТМЕНА') {
+//         target.innerHTML = lValue.value;
 //         textarea.remove();
 //         lValue.remove();
 //         activeEl = '';
@@ -1384,7 +1387,7 @@ html_leng.lang = 'ru';
 //   cont.classList.add('cont');
 //   cont.hidden = true;
 //   document.body.append(cont);
-//   cont.textContent = target.innerHTML;
+//   cont.value = target.innerHTML;
 
 //   const textarea = document.createElement('textarea');
 //   textarea.classList.add('textarea');
@@ -1411,12 +1414,12 @@ html_leng.lang = 'ru';
 //   const btnOk = document.createElement('button');
 //   const btnCancel = document.createElement('button');
 
-//   btnOk.textContent = 'OK';
+//   btnOk.value = 'OK';
 //   btnOk.style.position = 'absolute';
 //   target.append(btnOk);
 //   btnOk.style.left = `${target.getBoundingClientRect().left}px`;
 
-//   btnCancel.textContent = 'ОТМЕНА';
+//   btnCancel.value = 'ОТМЕНА';
 //   btnCancel.style.position = 'absolute';
 //   target.append(btnCancel);
 //   btnCancel.style.left = `${
@@ -1489,12 +1492,12 @@ html_leng.lang = 'ru';
 
 // calc()
 // function calc(){
-//   moneyBefore.textContent = money.value
+//   moneyBefore.value = money.value
 //   const result = Math.round(money.value * (1 + (interest.value/100)) ** (months.value/12));
 
-//   moneyAfter.textContent = result
+//   moneyAfter.value = result
 
-// heightAfter.style.height = (heightBefore.getBoundingClientRect().height * (moneyAfter.textContent/moneyBefore.textContent)) +'px'
+// heightAfter.style.height = (heightBefore.getBoundingClientRect().height * (moneyAfter.value/moneyBefore.value)) +'px'
 
 // }
 
@@ -1791,7 +1794,7 @@ html_leng.lang = 'ru';
 
 // for (let item of json){
 //   let ul = document.createElement('ul')
-//   ul.textContent = item.title
+//   ul.value = item.title
 //   document.body.append(ul)
 // }
 
@@ -1805,7 +1808,7 @@ html_leng.lang = 'ru';
 // }).then((json)=>{
 //   for (let item of json){
 //       let ul = document.createElement('ul')
-//       ul.textContent = item.title
+//       ul.value = item.title
 //       document.body.append(ul)
 //   }
 // })
@@ -1821,7 +1824,7 @@ html_leng.lang = 'ru';
 
 //   for (let item of json){
 //       let ul = document.createElement('ul')
-//       ul.textContent = item.title
+//       ul.value = item.title
 //       document.body.append(ul)
 //   }
 // })
@@ -2204,20 +2207,149 @@ html_leng.lang = 'ru';
 // .then(response=>response.body)
 // .then(data=>console.log(data))
 
-async function getUsers(names) {
-  let users = [];
+// async function getUsers(names) {
+//   let users = [];
 
-  for (let people of names) {
-    
-      let response = await fetch(`https://api.github.com/users/${people}`);
-      console.log(response.ok)
+//   for (let people of names) {
+//     let response = await fetch(`https://api.github.com/users/${people}`);
 
-      let user = await response.json();
-      users.push(user);
-   
-  }
+//     if (!(response.status === 200)) {
+//       users.push(null);
+//       continue;
+//     }
 
-  console.log(users);
-}
+//     let user = await response.json();
+//     users.push(user);
+//   }
 
-getUsers(['iliakan', 'remy', 'no.such.users']);
+//   console.log(users);
+// }
+
+// getUsers(['iliakan', 'remy', 'no.such.users']);
+
+// let xhr = new XMLHttpRequest();
+
+// xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1')
+
+// // xhr.responseType = 'json';
+
+// xhr.send()
+
+// xhr.onload = function() {
+//   console.log(xhr.response);
+// };
+
+// xhr.onerror = function() { // происходит, только когда запрос совсем не получилось выполнить
+//   console.log(`Ошибка соединения`);
+// };
+
+// xhr.onprogress = function(event) { //
+//   console.log(event);
+// };
+
+// let xhr = new XMLHttpRequest();
+
+// xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1', false);
+
+// try {
+//   xhr.send();
+//   console.log(xhr.upload)
+//   if (xhr.status != 200) {
+//     console.log(`Ошибка ${xhr.status}: ${xhr.statusText}`);
+//   } else {
+//     console.log(xhr.response);
+//   }
+// } catch(err) { // для отлова ошибок используем конструкцию try...catch вместо onerror
+//   console.log("Запрос не удался");
+// }
+
+// console.log(xhr.)
+
+// localStorage.setItem('lengttth', {name:'d'});
+// // localStorage.clear()
+
+// console.log(localStorage.getItem('lengttth') )
+
+// // for (let key of Object.keys(localStorage)){
+// //   console.log(key)
+// // }
+
+// cl(JSON.stringify(localStorage))
+// localStorage.clear()
+
+// const area = document.querySelector('#area')
+
+// area.value = localStorage.getItem('area');
+
+// area.oninput =()=> {
+//   localStorage.setItem('area', area.value)
+
+// }
+
+// localStorage.clear()
+
+// let openRequest = indexedDB.open('store', 1);
+
+// openRequest.onupgradeneeded = (event) => {
+//   cl('onupgradeneeded');
+//   let db = openRequest.result;
+// //  db.createObjectStore('books', { keyPath: 'idBook' });
+// //   db.createObjectStore('animals', { keyPath: 'idAnimal' });
+
+//   let books = db.createObjectStore('books', {keyPath: 'id'});
+//   let index = books.createIndex('price_idx', 'price');
+//   console.log(index)
+// };
+
+// openRequest.onsuccess = function () {
+//   cl('onsuccess');
+//   let db = openRequest.result;
+
+//   cl(db);
+
+//   db.onversionchange = function () {
+//     // db.close();
+//     console.log('База данных устарела, пожалуйста, перезагрузите страницу.');
+//   };
+
+// //   let transaction = db.transaction("books"); // readonly
+// // let books = transaction.objectStore("books");
+// // let priceIndex = books.index("price_idx");
+
+// // let request = priceIndex.getAll(10);
+
+// // request.onsuccess = function() {
+// //   if (request.result !== undefined) {
+// //     console.log("Книги", request.result); // массив книг с ценой 10
+// //   } else {
+// //     console.log("Нет таких книг");
+// //   }
+// // };
+
+//   let transaction = db.transaction('books', 'readwrite');
+//   let books = transaction.objectStore('books');
+
+//   let book = {
+//     idBook: 'js',
+//     price: 10,
+//     created: new Date(),
+//   };
+
+//   let request = books.add(book);
+//   request.onsuccess = function () {
+//     // (4)
+//     console.log('Книга добавлена в хранилище', request.result);
+//   };
+
+//   request.onerror = function () {
+//     console.log('Ошибка', request.error);
+//   };
+
+//   cl();
+// };
+
+// openRequest.onerror = (event) => {
+//   cl(`oneerror: ` + openRequest.error);
+// };
+
+// indexedDB.deleteDatabase('store')
