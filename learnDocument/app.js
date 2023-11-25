@@ -2353,3 +2353,122 @@ function cl(value) {
 // };
 
 // indexedDB.deleteDatabase('store')
+
+// window.onmousemove =(event)=>{
+//   console.log(event.clientY , event.clientX)
+// }
+
+// function showCircle(cx, cy, radius, callbackk) {
+//   document.querySelector(
+//     '.show'
+//   ).textContent = `showCircle(${cx}, ${cy}, ${radius})`;
+
+//   document.querySelector('.show').onclick = function () {
+
+//     let div = document.createElement('div');
+//     document.body.append(div);
+
+//     div.style.width =  0
+
+//     div.style.height = 0
+
+//     div.style.top = `${cx}px`;
+//     div.style.left = `${cy}px`;
+
+//     div.classList.add('circle');
+
+//     function callback(div){
+//       document.createElement('p').textContent = callbackk
+//       div.append(document.querySelector('p'))
+
+//     }
+
+//     setTimeout(() => {
+//       div.style.width = radius * 2 + 'px';
+//       div.style.height = radius * 2 + 'px';
+//       div.addEventListener('transitionend', function handler() {
+//         div.removeEventListener('transitionend', handler);
+//         callback(div);
+//       });
+//     }, 0);
+//   };
+// }
+
+// showCircle(150, 150, 100,'hello');
+// cl(performance.now())
+
+// class TimeFormatted extends HTMLElement {
+//   render() {
+//     let date = new Date(this.getAttribute('datetime') || Date.now());
+
+//     this.innerHTML = new Intl.DateTimeFormat('default', {
+//       year: this.getAttribute('year') || undefined,
+//       month: this.getAttribute('month') || undefined,
+//       day: this.getAttribute('day') || undefined,
+//       hour: this.getAttribute('hour') || undefined,
+//       minute: this.getAttribute('minute') || undefined,
+//       second: this.getAttribute('second') || undefined,
+//       timeZoneName: this.getAttribute('time-zone-name') || undefined,
+//     }).format(date);
+//   }
+
+//   connectedCallback() {
+//     if (!this.rendered) {
+//       this.render();
+//       this.rendered = true;
+//     }
+//   }
+
+//   static get observedAttributes() {
+//     return [
+//       'datetime',
+//       'year',
+//       'month',
+//       'day',
+//       'hour',
+//       'minute',
+//       'second',
+//       'time-zone-name',
+//     ];
+//   }
+
+//   attributeChangedCallback(name, oldValue, newValue) {
+//     this.render();
+//   }
+// }
+
+// customElements.define('time-formatted', TimeFormatted);
+
+// class LiveTimer extends TimeFormatted {
+//   constructor() {
+//     super();
+//   }
+
+//   /* ваш код здесь */
+// }
+
+// customElements.define('live-timer', LiveTimer);
+
+// setInterval(() => {
+//   elem.setAttribute('datetime', new Date());
+//   console.log(elem.date);
+//   // elem.dispatchEvent(event)
+// }, 1000); // (5)
+
+// //  event = new CustomEvent('tick',{
+// //   detail: elem.date
+// //  });
+
+// elem.addEventListener('tick', (event) => console.log(event.detail));
+
+// elem.attachShadow({mode: 'open'});
+// // у теневого дерева свои стили (2)
+// elem.shadowRoot.innerHTML = `
+// <style> p { font-weight: bold; } </style>
+// <p>Hello, John!</p>
+// `;
+
+// // <p> виден только запросам внутри теневого дерева (3)
+// console.log(document.querySelectorAll('p').length); // 0
+// console.log(elem.shadowRoot.querySelectorAll('p').length); // 1
+
