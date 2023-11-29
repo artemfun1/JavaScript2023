@@ -2472,3 +2472,23 @@ function cl(value) {
 // console.log(document.querySelectorAll('p').length); // 0
 // console.log(elem.shadowRoot.querySelectorAll('p').length); // 1
 
+//  console.log("Глава 5.1".match(/\d\.\d/) );
+
+
+//  let regexp =  /\d\d[:-]\d\d/g ;
+
+//  console.log( "Завтрак в 09:00. Ужин в 21-30".match(regexp) ); 
+
+// let str = "+7(903)-123-45-67";
+
+// let numbers = str.match(/\d+/g);
+
+// console.log(numbers)
+
+
+
+let regexp = /\.+/g;
+
+console.log("Привет!... Как дела?.....".match(regexp) )
+
+
