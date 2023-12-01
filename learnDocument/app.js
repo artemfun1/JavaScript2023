@@ -2485,10 +2485,9 @@ function cl(value) {
 
 // console.log(numbers)
 
+// let regexp = /\.+/g;
 
+// console.log("some!... some?.....".match(regexp) )
 
-let regexp = /\.+/g;
-
-console.log("Привет!... Как дела?.....".match(regexp) )
-
+// cl("123 456".match(/\d+? \d+?/g) )
 
