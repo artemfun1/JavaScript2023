@@ -1,7 +1,9 @@
 .header{
   background-color: red;
   height: 200px;
-  width: 200px;
+  width: 50vw;
   margin: auto;
+  font-size: 5vw;
+
  
 }
