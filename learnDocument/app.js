@@ -2474,10 +2474,9 @@ function cl(value) {
 
 //  console.log("Глава 5.1".match(/\d\.\d/) );
 
-
 //  let regexp =  /\d\d[:-]\d\d/g ;
 
-//  console.log( "Завтрак в 09:00. Ужин в 21-30".match(regexp) ); 
+//  console.log( "Завтрак в 09:00. Ужин в 21-30".match(regexp) );
 
 // let str = "+7(903)-123-45-67";
 
@@ -2491,4 +2490,38 @@ function cl(value) {
 
 // cl("123 456".match(/\d+? \d+?/g) )
 
-rnrvnr
+// let a = document.createElement;
+// let display = document.querySelector('.display');
+// display.textContent = '122';
+// let keybord = document.querySelectorAll('.key');
+// let clear = document.querySelector('.clear');
+// clear.onclick = function () {
+//   display.textContent = '';
+// };
+// keybord.addEventListener();
+// for (elem of keybord) {
+//   elem.addEventListener('click', r);
+//   function r() {
+//     display.textContent += elem.textContent;
+//   }
+// }
+
+// let radioBtn = document.querySelectorAll('.review')
+// let submitBtn = document.querySelector(".submit-button")
+// let er = document.querySelector('.error')
+
+// for(btn of radioBtn){
+//   btn.addEventListener('change',function f(){
+//   if(btn.dataset.evaluation){
+
+//     submitBtn.disabled = false;
+//     er.classList.remove('shown')
+//   } else {
+//     submitBtn.disabled = true;
+//     er.classList.add('shown')
+//   }
+// }
+//  )
+// }
+
+console.log(1)
